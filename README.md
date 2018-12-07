@@ -1,4 +1,8 @@
 # Joe Platta's Dotfiles
+## Notes
+* Working on alias_manager
+* Rake tasks for setup (zsh)
+* Moving current config files into the dotfiles folder
 
 ## Reference
 * [Great list of refs](https://github.com/webpro/awesome-dotfiles)
