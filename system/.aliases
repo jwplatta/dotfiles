@@ -2,6 +2,11 @@
 alias lsag='ls -a | grep'
 alias ls='ls -GFh'
 alias procore='cd ~/procore'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+# Recursively remove .DS_Store files
+alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Git aliases
 alias gs='git status '
