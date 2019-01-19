@@ -1,20 +1,17 @@
-require 'rake'
-require 'yaml'
+require "rake"
+require "yaml"
 
 task :link_all_dotfiles do
-  puts 'implement link_all_dotfiles'
+  puts "implement link_all_dotfiles"
 end
 
 task :link_dotfile, [:filename] do |_task, args|
   puts "linking single dotfile: #{args[:filename]}"
 end
 
-def full_path(filename)
+def full_path(filename); end
 
-end
-
-def get_dotfile(filename)
-end
+def get_dotfile(filename); end
 
 def copy_file(filename)
   file_to_copy = get_dotfile(file)

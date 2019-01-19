@@ -21,4 +21,6 @@
 * [Brad Urani dotfiles](https://github.com/bradurani/dotfiles)
 * [Ryan Bates dotfiles](https://github.com/ryanb/dotfiles)
 * [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles)
-* [Dries Vint dotfiles ](https://github.com/driesvints/dotfiles) 
+* [Dries Vint dotfiles ](https://github.com/driesvints/dotfiles)
+## Other
+* [Setup mac](https://sourabhbajaj.com/mac-setup/Homebrew/)
