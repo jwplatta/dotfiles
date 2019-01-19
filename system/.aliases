@@ -15,15 +15,16 @@ alias gb='git branch '
 alias gcom='git commit '
 alias gdiff='git diff '
 alias gco='git checkout '
-alias gbr='git checkout -b '
+alias gcob='git checkout -b '
 alias gmm='git merge master'
 alias gash='git stash'
+alias gpo='git pull origin '
 
 # Rails aliases
 alias rc='rails c'
 alias rs='rails s'
 
-# Bundler 
+# Bundler
 alias be='bundle exec'
 
 # Brew aliases

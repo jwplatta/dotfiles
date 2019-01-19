@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # these are loaded first, second, and third, respectively.
 _load_settings "$HOME/.zsh/configs"
 
-# Env 
+# Env
 [[ -f ~/.env ]] && source ~/.env
 
 # Local config
@@ -29,7 +29,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-[[-f ~/.aliases]] && source ~/.aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
