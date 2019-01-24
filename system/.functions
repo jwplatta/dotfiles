@@ -5,5 +5,19 @@ function mk() {
 
 # Open man page as PDF
 function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+
+# get procore-reporting schemas
+get_all_pcr_schemas() {
+  find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
+    xargs cat |
+    grep BiTemp.*do |
+    sed 's/def.*BiT.*\.\(.*\) do/\1/' |
+    sort
+}
+
+# Source zshrc
+src_zsh(){
+  source ~/.zshrc
 }

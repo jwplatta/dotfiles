@@ -31,5 +31,8 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# add bash functions
+[[ -f ~/.functions ]] && source ~/.functions
+
 # fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
