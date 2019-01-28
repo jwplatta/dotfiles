@@ -25,6 +25,18 @@ plugins=(
   nvm
 )
 
+# general ruby scripts
+export PATH="$HOME/.scripts/ruby/scripts"
+
+# ruby scripts for procore
+export PATH="$HOME/.scripts/ruby/scripts/procore"
+
+
+# path to node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -36,3 +48,27 @@ source $ZSH/oh-my-zsh.sh
 
 # fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# postgresql
+# Not using the Mac OS installed
+# export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
+
+#Use brew install versions
+# export PATH=/usr/local/opt/postgresql@9.6/bin/:$PATH
+export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# add bash functions
+[[ -f ~/.functions ]] && source ~/.functions
+
+# python
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

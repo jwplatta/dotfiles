@@ -19,5 +19,18 @@ get_all_pcr_schemas() {
 
 # Source zshrc
 src_zsh(){
-  source ~/.zshrc
+  source $HOME/.zshrc
+  echo ".zshrc loaded"
+}
+
+# Source aliases
+src_als(){
+  source $HOME/.aliases
+  echo ".aliases loaded"
+}
+
+# Source functions
+src_funs(){
+  source $HOME/.functions
+  echo ".functions loaded"
 }
