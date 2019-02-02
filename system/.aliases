@@ -1,8 +1,8 @@
 # General
-alias als="cat $HOME/.aliases"
-alias ezsh="code $HOME/.zshrc"
-alias eals="code $HOME/.aliases"
-alias efunc="code $HOME/.functions"
+alias als="cat $HOME/.dotfiles/system/.aliases"
+alias ezsh="code $HOME/.dotfiles/system/.zshrc"
+alias eals="code $HOME/.dotfiles/system/.aliases"
+alias efunc="code $HOME/.dotfiles/system/.functions"
 
 # Project
 alias prc='cd $HOME/procore'

@@ -19,20 +19,20 @@ get_all_pcr_schemas() {
 
 # Source zshrc
 src_zsh(){
-  source $HOME/.zshrc
-  echo ".zshrc loaded"
+  source $HOME/.dotfiles/system/.zshrc
+  echo "zshrc loaded"
 }
 
 # Source aliases
 src_als(){
-  source $HOME/.aliases
-  echo ".aliases loaded"
+  source $HOME/.dotfiles/system/.aliases
+  echo "aliases loaded"
 }
 
 # Source functions
 src_funs(){
-  source $HOME/.functions
-  echo ".functions loaded"
+  source $HOME/.dotfiles/system/.functions
+  echo "functions loaded"
 }
 
 # Kubernetes
@@ -60,6 +60,6 @@ pcr_pods() {
 # Import symlinks
 symlink_pre_commit_hook(){
   lang=$1
-  ln -s $HOME/dotfiles/git/hooks/$lang-pre-commit-hook .git/hooks/pre-commit
+  ln -s $HOME/.dotfiles/git/hooks/$lang-pre-commit-hook .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
 }
