@@ -63,3 +63,9 @@ symlink_pre_commit_hook(){
   ln -s $HOME/.dotfiles/git/hooks/$lang-pre-commit-hook .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
 }
+
+link_dotfiles(){
+  ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
+  ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
+  ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
+}
