@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load custom executable functions
 # extra files in ~/.zsh/configs/pre , ~/.zsh/configs , and ~/.zsh/configs/post
 # these are loaded first, second, and third, respectively.
-_load_settings "$HOME/.zsh/configs"
+# _load_settings "$HOME/.zsh/configs"
 
 # Env
 [[ -f ~/.env ]] && source ~/.env
