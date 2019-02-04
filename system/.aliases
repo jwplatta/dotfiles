@@ -2,20 +2,20 @@
 alias als="cat $HOME/.dotfiles/system/.aliases"
 alias ezsh="code $HOME/.dotfiles/system/.zshrc"
 alias eals="code $HOME/.dotfiles/system/.aliases"
-alias efunc="code $HOME/.dotfiles/system/.functions"
+alias efun="code $HOME/.dotfiles/system/.functions"
 
 # Project
-alias prc='cd $HOME/procore'
-alias prc-rpt='cd $HOME/procore_repos/procore-reporting'
+alias prc="cd $HOME/procore"
+alias prc-rpt="cd $HOME/procore_repos/procore-reporting"
 
 # Linux aliases
-alias lsag='ls -a | grep'
-alias ls='ls -GFh'
-alias ..='cd ..'
-alias ...='cd ../..'
+alias lsag="ls -a | grep"
+alias ls="ls -GFh"
+alias ..="cd .."
+alias ...="cd ../.."
 alias ....="cd ../../.."
 # Recursively remove .DS_Store files
-alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanupds="find . -type f -name "*.DS_Store" -ls -delete"
 
 # Mix
 alias mps="mix phx.server"
@@ -23,30 +23,33 @@ alias mer="mix ecto.reset"
 alias Smps="iex -S mix phx.server"
 
 # Git aliases
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gcom='git commit '
-alias gdiff='git diff '
-alias gco='git checkout '
-alias gcob='git checkout -b '
-alias gmm='git merge master'
-alias gash='git stash'
-alias gasha='git stash apply'
-alias gashp='git stash pop'
-alias gpo='git pull origin '
+alias gs="git status "
+alias ga="git add "
+alias gb="git branch "
+alias gcom="git commit "
+alias gdiff="git diff "
+alias gco="git checkout "
+alias gcob="git checkout -b "
+alias gmm="git merge master"
+alias gash="git stash"
+alias gasha="git stash apply"
+alias gashp="git stash pop"
+alias gpo="git pull origin "
 
 # Rails aliases
-alias rc='rails c'
-alias rs='rails s'
+alias rc="rails c"
+alias rs="rails s"
+
+# Ruby
+alias rubofix="rubocop -a "
 
 # Bundler
-alias be='bundle exec'
+alias be="bundle exec"
 
 # Brew aliases
-alias brewsl='brew services list'
-alias bsstop='brew services stop'
-alias bsstart='brew services start'
+alias brewsl="brew services list"
+alias bsstop="brew services stop"
+alias bsstart="brew services start"
 
 # Python
 alias pest="python -m unittest"
