@@ -1,18 +1,9 @@
 # Joe Platta's Dotfiles
 ## Notes/TODO
-* Create system folder
-* Complete zsh setup (for now)
-  * .zshrc
-  * .zshrc.local
-  * .oh-my-zsh
-* Rake tasks for settuping zsh
-  * link zsh files
-* Continue this process for:
-  * git
-  * elixir stuff, e.g. IEx shell
-  * .irbrc
-  * .gemrc
-* Work on alias_manager
+* githook for rubocop
+* elixir stuff, e.g. IEx shell
+* .irbrc
+* .gemrc
 
 ## Reference
 * [Great list of refs](https://github.com/webpro/awesome-dotfiles)
