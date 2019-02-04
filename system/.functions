@@ -60,7 +60,7 @@ pcr_pods() {
 # Import symlinks
 symlink_pre_commit_hook(){
   lang=$1
-  ln -s $HOME/.dotfiles/git/hooks/$lang-pre-commit-hook .git/hooks/pre-commit
+  ln -svf $HOME/.dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
 }
 
