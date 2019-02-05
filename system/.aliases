@@ -42,6 +42,7 @@ alias rs="rails s"
 
 # Ruby
 alias rubofix="rubocop -a "
+alias rubomat="rubocop -x "
 
 # Bundler
 alias be="bundle exec"
