@@ -21,6 +21,8 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias mps="mix phx.server"
 alias mer="mix ecto.reset"
 alias Smps="iex -S mix phx.server"
+alias iSm="iex -S mix"
+alias mdpsg="mix deps.get"
 
 # Git aliases
 alias gs='git status '
