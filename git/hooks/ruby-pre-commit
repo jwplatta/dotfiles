@@ -1,4 +1,8 @@
 #!/bin/sh
+# husky
+# v1.0.0-rc.13 darwin
+
+echo "checking ruby syntax"
 
 set -euo pipefail
 
@@ -8,3 +12,19 @@ xargs bundle exec rubocop \
 --display-cop-names \
 --extra-details \
 --parallel \
+
+
+scriptPath="hydra_clients/insights_home/node_modules/husky/lib/runner/bin.js"
+hookName=`basename "$0"`
+gitParams="$*"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Can't find node in PATH, trying to find a node binary on your system"
+fi
+
+if [ -f $scriptPath ]; then
+  hydra_clients/insights_home/node_modules/run-node/run-node $scriptPath $hookName "$gitParams"
+else
+  echo "Can't find Husky, skipping $hookName hook"
+  echo "You can reinstall it using 'npm install husky --save-dev' or delete this hook"
+fi

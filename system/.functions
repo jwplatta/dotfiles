@@ -30,7 +30,7 @@ src_als(){
 }
 
 # Source functions
-src_funs(){
+src_fun(){
   source $HOME/.dotfiles/system/.functions
   echo "functions loaded"
 }
@@ -59,8 +59,13 @@ pcr_pods() {
 
 # Import symlinks
 symlink_pre_commit_hook(){
+
+  echo "Linking "
+  echo ".git/hooks/pre-commit"
+  echo "to"
+  echo $HOME/.dotfiles/git/hooks/$1-pre-commit
   lang=$1
-  ln -s $HOME/.dotfiles/git/hooks/$lang-pre-commit-hook .git/hooks/pre-commit
+  ln -svf $HOME/.dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
 }
 
