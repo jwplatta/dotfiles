@@ -37,6 +37,7 @@ alias gash="git stash"
 alias gasha="git stash apply"
 alias gashp="git stash pop"
 alias gpo="git pull origin "
+alias pullmast="git pull origin master"
 
 # Rails aliases
 alias rc="rails c"
@@ -44,6 +45,7 @@ alias rs="rails s"
 
 # Ruby
 alias rubofix="rubocop -a "
+alias rubomat="rubocop -x "
 
 # Bundler
 alias be="bundle exec"
