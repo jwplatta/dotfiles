@@ -56,3 +56,5 @@ tmp/**/*
 !tmp/cache/.keep
 tags.temp
 tags.lock
+
+__pycache__/
