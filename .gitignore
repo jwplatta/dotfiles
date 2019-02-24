@@ -24,6 +24,8 @@ Thumbs.db
 *.so
 *.pyc
 *.beam
+_build/
+
 
 # Packages #
 ############

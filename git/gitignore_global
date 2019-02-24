@@ -13,6 +13,7 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+__pycache__/
 
 # Compiled source #
 ###################
@@ -24,6 +25,7 @@ Thumbs.db
 *.so
 *.pyc
 *.beam
+_build/
 
 # Packages #
 ############
@@ -56,5 +58,3 @@ tmp/**/*
 !tmp/cache/.keep
 tags.temp
 tags.lock
-
-__pycache__/
