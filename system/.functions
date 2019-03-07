@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
@@ -11,10 +13,10 @@ function manpdf() {
 # get procore-reporting schemas
 get_all_pcr_schemas() {
   find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
-    xargs cat |
-    grep BiTemp.*do |
-    sed 's/def.*BiT.*\.\(.*\) do/\1/' |
-    sort
+  xargs cat |
+  grep BiTemp.*do |
+  sed 's/def.*BiT.*\.\(.*\) do/\1/' |
+  sort
 }
 
 # Source zshrc
@@ -37,29 +39,29 @@ src_fun(){
 
 # Kubernetes
 pod_connect() {
-    pod_name=$1
-    kubectl exec -it $pod_name -- /bin/bash
+  pod_name=$1
+  kubectl exec -it $pod_name -- /bin/bash
 }
 
 pod_select() {
-    shipment=$1
-    app=$2
-
-    if [[ -n $app ]]; then
-        kubectl get pods --selector=shipment=$shipment,app=$app
-    else
-        kubectl get pods --selector=shipment=$shipment
-    fi
+  shipment=$1
+  app=$2
+  
+  if [[ -n $app ]]; then
+    kubectl get pods --selector=shipment=$shipment,app=$app
+  else
+    kubectl get pods --selector=shipment=$shipment
+  fi
 }
 
 pcr_pods() {
-    shipment=$1
-    pod_select $shipment procore-reporting
+  shipment=$1
+  pod_select $shipment procore-reporting
 }
 
 # Import symlinks
 symlink_pre_commit_hook(){
-
+  
   echo "Linking "
   echo ".git/hooks/pre-commit"
   echo "to"
@@ -74,5 +76,11 @@ link_dotfiles(){
   ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
   ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
   ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
+  ln -sf $HOME/.dotfiles $HOME/dotfiles
   echo "dotfiles linked"
+}
+
+ssh_jwplatta(){
+  ssh-add ~/.ssh/jwplatta_github
+  echo "jwplatta_github added"
 }
