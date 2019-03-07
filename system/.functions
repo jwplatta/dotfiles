@@ -76,6 +76,8 @@ link_dotfiles(){
   ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
   ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
   ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
+  ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
+  ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
   ln -sf $HOME/.dotfiles $HOME/dotfiles
   echo "dotfiles linked"
 }
