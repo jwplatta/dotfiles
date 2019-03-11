@@ -47,7 +47,7 @@ _build/
 *.sqlite
 db/*.sqlite3
 
-# 
+#
 .bundle
 .byebug_history
 .env
@@ -58,3 +58,6 @@ tmp/**/*
 !tmp/cache/.keep
 tags.temp
 tags.lock
+
+# Elixir
+.elixir_ls
