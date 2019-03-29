@@ -70,6 +70,9 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=/usr/local/opt/postgresql@9.6/bin/:$PATH
 export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
 
+# load environment variables
+source $HOME/.env
+
 # git
 [ -s "/Users/josephplatta/.scm_breeze/scm_breeze.sh" ] && source "/Users/josephplatta/.scm_breeze/scm_breeze.sh"
 
@@ -88,9 +91,6 @@ fi
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
-# load environment variables
-source $HOME/.env
 
 echo $PATH
 echo

@@ -76,6 +76,7 @@ link_dotfiles(){
   ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
   ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
   ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
+  ln -sf $HOME/.dotfiles/system/.env $HOME/.env
   ln -sf $HOME/.dotfiles $HOME/dotfiles
   echo "dotfiles linked"
 }
