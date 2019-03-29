@@ -89,6 +89,8 @@ fi
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+# load environment variables
+source $HOME/.env
 
 echo $PATH
 echo
