@@ -105,3 +105,28 @@ ssh_jwplatta(){
   ssh-add ~/.ssh/jwplatta_github
   echo "jwplatta_github added"
 }
+
+function open_notes(){
+  if [ -z "$1" ]; then
+    code $HOME/vsc_workspaces/dev_notes.code-workspace
+  else
+    files=($(find $HOME/dev_notes -type f -name "*$1*"))
+    for ((i=0; i<=${#files[@]}; i++)); do
+      echo "[$i] ${files[$i]}"
+    done
+    
+    echo
+    echo "Enter file index: "
+    echo
+    
+    read file_number
+    
+    code $HOME/vsc_workspaces/dev_notes.code-workspace
+    code ${files[$file_number]}
+  fi
+  
+}
+
+function open_dotfiles(){
+  code $HOME/vsc_workspaces/dotfiles.code-workspace
+}
