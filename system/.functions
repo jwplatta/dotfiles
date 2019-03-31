@@ -2,131 +2,133 @@
 
 # Create a new directory and enter it
 function mk() {
-  mkdir -p "$@" && cd "$@"
+    mkdir -p "$@" && cd "$@"
 }
 
 # Open man page as PDF
 function manpdf() {
-  man -t "${1}" | open -f -a /Applications/Preview.app/
+    man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
 # get procore-reporting schemas
 get_all_pcr_schemas() {
-  find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
-  xargs cat |
-  grep BiTemp.*do |
-  sed 's/def.*BiT.*\.\(.*\) do/\1/' |
-  sort
+    find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
+    xargs cat |
+    grep BiTemp.*do |
+    sed 's/def.*BiT.*\.\(.*\) do/\1/' |
+    sort
 }
 
 # Source zshrc
 src_zsh(){
-  source $HOME/.dotfiles/system/.zshrc
-  echo "zshrc loaded"
+    source $HOME/.dotfiles/system/.zshrc
+    echo "zshrc loaded"
 }
 
 # Source aliases
 src_als(){
-  source $HOME/.dotfiles/system/.aliases
-  echo "aliases loaded"
+    source $HOME/.dotfiles/system/.aliases
+    echo "aliases loaded"
 }
 
 # Source functions
 src_fun(){
-  source $HOME/.dotfiles/system/.functions
-  echo "functions loaded"
+    source $HOME/.dotfiles/system/.functions
+    echo "functions loaded"
 }
 
 # Kubernetes
 pod_connect() {
-  pod_name=$1
-  kubectl exec -it $pod_name -- /bin/bash
+    pod_name=$1
+    kubectl exec -it $pod_name -- /bin/bash
 }
 
 pod_select() {
-  shipment=$1
-  app=$2
-  
-  if [[ -n $app ]]; then
-    kubectl get pods --selector=shipment=$shipment,app=$app
-  else
-    kubectl get pods --selector=shipment=$shipment
-  fi
+    shipment=$1
+    app=$2
+    
+    if [[ -n $app ]]; then
+        kubectl get pods --selector=shipment=$shipment,app=$app
+    else
+        kubectl get pods --selector=shipment=$shipment
+    fi
 }
 
 pcr_pods() {
-  shipment=$1
-  pod_select $shipment procore-reporting
+    shipment=$1
+    pod_select $shipment procore-reporting
 }
 
 # Import symlinks
 symlink_pre_commit_hook(){
-  
-  echo "Linking "
-  echo ".git/hooks/pre-commit"
-  echo "to"
-  echo $HOME/.dotfiles/git/hooks/$1-pre-commit
-  lang=$1
-  ln -svf $HOME/.dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
-  chmod +x .git/hooks/pre-commit
+    
+    echo "Linking "
+    echo ".git/hooks/pre-commit"
+    echo "to"
+    echo $HOME/.dotfiles/git/hooks/$1-pre-commit
+    lang=$1
+    ln -svf $HOME/.dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
+    chmod +x .git/hooks/pre-commit
 }
 
 link_dotfiles(){
-  ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
-  ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
-  ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
-  ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
-  ln -sf $HOME/.dotfiles/system/.env $HOME/.env
-  ln -sf $HOME/.dotfiles $HOME/dotfiles
-  echo "dotfiles linked"
+    ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
+    ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
+    ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
+    ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
+    # ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
+    # ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
+    ln -sf $HOME/.dotfiles/system/.env $HOME/.env
+    # ln -sf $HOME/.dotfiles $HOME/dotfiles
+    echo "dotfiles linked"
 }
 
 link_gitconfig(){
-  cat $HOME/.dotfiles/git/gitconfig
-  
-  echo ""
-  echo "Make above gitconfig global?[y/n]"
-  read answer
-  
-  if [ $answer == "y" ]; then
-    ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
-    echo "gitconfig linked"
-  else
-    echo "Not linking gitconfig"
-  fi
+    cat $HOME/.dotfiles/git/gitconfig
+    
+    echo ""
+    echo "Make above gitconfig global?[y/n]"
+    read answer
+    
+    if [ $answer == "y" ]; then
+        ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
+        echo "gitconfig linked"
+    else
+        echo "Not linking gitconfig"
+    fi
 }
 
 link_global_gitignore(){
-  ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
-  echo "global_gitignore linked"
+    ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
+    echo "global_gitignore linked"
 }
 
 ssh_jwplatta(){
-  ssh-add ~/.ssh/jwplatta_github
-  echo "jwplatta_github added"
+    ssh-add ~/.ssh/jwplatta_github
+    echo "jwplatta_github added"
 }
 
 function open_notes(){
-  if [ -z "$1" ]; then
-    code $HOME/vsc_workspaces/dev_notes.code-workspace
-  else
-    files=($(find $HOME/dev_notes -type f -name "*$1*"))
-    for ((i=0; i<=${#files[@]}; i++)); do
-      echo "[$i] ${files[$i]}"
-    done
+    if [ -z "$1" ]; then
+        code $HOME/vsc_workspaces/dev_notes.code-workspace
+    else
+        files=($(find $HOME/dev_notes -type f -name "*$1*"))
+        for ((i=0; i<=${#files[@]}; i++)); do
+            echo "[$i] ${files[$i]}"
+        done
+        
+        echo
+        echo "Enter file index: "
+        echo
+        
+        read file_number
+        
+        code $HOME/vsc_workspaces/dev_notes.code-workspace
+        code ${files[$file_number]}
+    fi
     
-    echo
-    echo "Enter file index: "
-    echo
-    
-    read file_number
-    
-    code $HOME/vsc_workspaces/dev_notes.code-workspace
-    code ${files[$file_number]}
-  fi
-  
 }
 
 function open_dotfiles(){
-  code $HOME/vsc_workspaces/dotfiles.code-workspace
+    code $HOME/vsc_workspaces/dotfiles.code-workspace
 }
