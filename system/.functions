@@ -124,9 +124,57 @@ function open_notes(){
     code $HOME/vsc_workspaces/dev_notes.code-workspace
     code ${files[$file_number]}
   fi
-  
 }
 
 function open_dotfiles(){
   code $HOME/vsc_workspaces/dotfiles.code-workspace
+}
+
+function open_prc_ws(){
+  code $HOME/vsc_workspaces/procore_app.code-workspace
+  
+  # if [ -z $1 ]; then
+  # else
+  # files=($(find $HOME/procore -type f -name "*$1*"))
+  # echo $files
+  # for ((i=0; i<=${#files[@]}; i++)); do
+  #   echo "[$i] ${files[$i]}"
+  # done
+  
+  # echo
+  # echo "Enter file index: "
+  # echo
+  
+  # read file_index
+  
+  # code $HOME/vsc_workspaces/procore_app.code-workspace
+  # code ${files[$file_index]}
+  # fi
+}
+
+function open_pit_ws(){
+  code $HOME/vsc_workspaces/point_in_time_reporting.code-workspace
+}
+
+function open_workspace(){
+  workspace = $1
+  echo "Implement me so I can open $workspace"
+}
+
+function reset_prc_db_vol(){
+  rm -rf $HOME/docker/volumes/procore_db
+  mkdir $HOME/docker/volumes/procore_db
+}
+
+function reset_pit_db_vol(){
+  rm -rf $HOME/docker/volumes/procore_reporting_db
+  mkdir $HOME/docker/volumes/procore_reporting_db
+}
+
+function start_pit_db(){
+  docker run --rm --name pit_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d -p 5433:5432 -v $HOME/docker/volumes/procore_reporting_db:/var/lib/postgresql/data postgres:10.5
+}
+
+function start_prc_db(){
+  docker run --rm --name prc_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=procore_db -d -p 5432:5432 -v $HOME/docker/volumes/procore_db:/var/lib/postgresql/data postgres:9.6.9
 }

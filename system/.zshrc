@@ -57,6 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 # add bash functions
 [[ -f $HOME/.functions ]] && source $HOME/.functions
+# add postgres helper functions
+[[ -f $HOME/.postgres_functions ]] && source $HOME/.postgres_functions
+
 # [[ -f $HOME/.dotfiles/system/.functions ]] && source $HOME/.dotfiles/system/.functions
 
 # fuzzy find
@@ -69,9 +72,6 @@ source $ZSH/oh-my-zsh.sh
 #Use brew install versions
 # export PATH=/usr/local/opt/postgresql@9.6/bin/:$PATH
 export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
-
-# load environment variables
-source $HOME/.env
 
 # git
 [ -s "/Users/josephplatta/.scm_breeze/scm_breeze.sh" ] && source "/Users/josephplatta/.scm_breeze/scm_breeze.sh"
@@ -86,7 +86,6 @@ fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 
 # asdf
 . $HOME/.asdf/asdf.sh
