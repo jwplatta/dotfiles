@@ -128,6 +128,10 @@ function open_notes(){
   fi
 }
 
+function open_prc_notes(){
+  code $HOME/vsc_workspaces/procore_notes.code-workspace
+}
+
 function open_dotfiles(){
   code $HOME/vsc_workspaces/dotfiles.code-workspace
 }
