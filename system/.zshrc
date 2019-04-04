@@ -2,19 +2,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
-  echo "PATH includes $HOME/bin"
-  echo
+    echo "PATH includes $HOME/bin"
+    echo
 else
-  export PATH=$PATH:$HOME/bin
+    export PATH=$PATH:$HOME/bin
 fi
-
 
 # Path to your oh-my-zsh installation.
 if [[ ":$ZSH:" == *"$HOME/.oh-my-zsh"* ]]; then
-  echo "ZSH set to $HOME/.oh-my-zsh"
-  echo
+    echo "ZSH set to $HOME/.oh-my-zsh"
+    echo
 else
-  export ZSH=$HOME/.oh-my-zsh
+    export ZSH=$HOME/.oh-my-zsh
 fi
 
 # load custom executable functions
@@ -32,10 +31,10 @@ fi
 ZSH_THEME="af-magic"
 
 plugins=(
-  rails
-  ruby
-  git
-  nvm
+    rails
+    ruby
+    git
+    nvm
 )
 
 # general ruby scripts
@@ -76,12 +75,15 @@ export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
 # git
 [ -s "/Users/josephplatta/.scm_breeze/scm_breeze.sh" ] && source "/Users/josephplatta/.scm_breeze/scm_breeze.sh"
 
+# anaconda
+export PATH=$HOME/anaconda3/bin:$PATH
+
 # python
 if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
-  echo "PATH includes ~/.pyenv/shims:"
-  echo
+    echo "PATH includes ~/.pyenv/shims:"
+    echo
 else
-  eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
 fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
