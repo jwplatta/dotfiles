@@ -136,7 +136,7 @@ function open_dotfiles(){
   code $HOME/vsc_workspaces/dotfiles.code-workspace
 }
 
-function open_prc_ws(){
+function prc_ws(){
   code $HOME/vsc_workspaces/procore_app.code-workspace
   
   # if [ -z $1 ]; then
@@ -158,7 +158,7 @@ function open_prc_ws(){
   # fi
 }
 
-function open_pit_ws(){
+function pit_ws(){
   code $HOME/vsc_workspaces/point_in_time_reporting.code-workspace
 }
 
