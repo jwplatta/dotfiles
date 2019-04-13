@@ -184,3 +184,12 @@ function start_pit_db(){
 function start_prc_db(){
   docker run --rm --name prc_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=procore_db -d -p 5432:5432 -v $HOME/docker/volumes/procore_db:/var/lib/postgresql/data postgres:9.6.9
 }
+
+function data_sci_ws(){
+  code $HOME/vsc_workspaces/data_science_ws.code-workspace
+}
+
+function start_jupyter_nb(){
+  cd $HOME/Documents/data_science/notebooks
+  jupyter notebook
+}
