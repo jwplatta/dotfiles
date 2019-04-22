@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# TODO: Start refactoring functions out of this file and into
+# new_functions folder.
+
+source $HOME/.new_functions/docker_functions.sh
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
@@ -73,7 +78,10 @@ symlink_pre_commit_hook(){
 
 link_dotfiles(){
   ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
+  
+  # TODO: switch from .functions file to .functions folder
   ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
+  ln -sf $HOME/.dotfiles/system/new_functions $HOME/.new_functions
   ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
   ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
   # ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
