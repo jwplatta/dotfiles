@@ -1,12 +1,19 @@
+# Source alias files
+source $HOME/.new_aliases/git
+source $HOME/.new_aliases/ruby
+source $HOME/.new_aliases/rails
+source $HOME/.new_aliases/mix_elixir
+
 # General
-alias als="cat $HOME/.dotfiles/system/.aliases"
-alias ezsh="code $HOME/.dotfiles/system/.zshrc"
-alias eals="code $HOME/.dotfiles/system/.aliases"
-alias efun="code $HOME/.dotfiles/system/.functions"
+alias als="cat $HOME/dotfiles/system/.aliases"
+alias ezsh="code $HOME/dotfiles/system/.zshrc"
+alias eals="code $HOME/dotfiles/system/.aliases"
+alias efun="code $HOME/dotfiles/system/.functions"
 
 # Docker
 alias dcontainers="docker container list"
 alias dvols="ls $HOME/docker/volumes"
+
 # Project
 alias prc="cd $HOME/procore"
 alias prc-rpt="cd $HOME/procore_repos/procore-reporting"
@@ -17,43 +24,9 @@ alias ls="ls -GFh"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
 # Recursively remove .DS_Store files
 alias cleanupds='find . -type f -name "*.DS_Store" -ls -delete'
-
-# Mix & Elixir
-alias mps="mix phx.server"
-alias mer="mix ecto.reset"
-alias Smps="iex -S mix phx.server"
-alias iSm="iex -S mix"
-alias mdpsg="mix deps.get"
-alias ex="elixir"
-alias exc="elixirc"
-
-# Git aliases
-alias gs="git status"
-alias ga="git add"
-alias gb="git branch"
-alias gcom="git commit"
-alias gdiff="git diff"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gmm="git merge master"
-alias gash="git stash"
-alias gasha="git stash apply"
-alias gashp="git stash pop"
-alias gashd="git stash drop"
-alias gashl="git stash list"
-alias gashc="git stash clear"
-alias gpo="git pull origin"
-alias pullmast="git pull origin master"
-
-# Rails aliases
-alias rc="rails c"
-alias rs="rails s"
-
-# Ruby
-alias rubofix="rubocop -a "
-alias rubomat="rubocop -x "
 
 # Bundler
 alias be="bundle exec"

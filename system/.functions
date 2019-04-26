@@ -4,6 +4,7 @@
 # new_functions folder.
 
 source $HOME/.new_functions/docker_functions.sh
+source $HOME/.new_functions/test_functions.sh
 
 # Create a new directory and enter it
 function mk() {
@@ -78,6 +79,7 @@ symlink_pre_commit_hook(){
 
 link_dotfiles(){
   ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
+  ln -sf $HOME/.dotfiles/system/new_aliases $HOME/.new_functions
   
   # TODO: switch from .functions file to .functions folder
   ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions

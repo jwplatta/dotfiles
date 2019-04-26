@@ -1,0 +1,7 @@
+alias mps="mix phx.server"
+alias mer="mix ecto.reset"
+alias Smps="iex -S mix phx.server"
+alias iSm="iex -S mix"
+alias mdpsg="mix deps.get"
+alias ex="elixir"
+alias exc="elixirc"

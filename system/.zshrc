@@ -2,18 +2,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
-    echo "PATH includes $HOME/bin"
-    echo
+  echo "PATH includes $HOME/bin"
+  echo
 else
-    export PATH=$PATH:$HOME/bin
+  export PATH=$PATH:$HOME/bin
 fi
 
 # Path to your oh-my-zsh installation.
 if [[ ":$ZSH:" == *"$HOME/.oh-my-zsh"* ]]; then
-    echo "ZSH set to $HOME/.oh-my-zsh"
-    echo
+  echo "ZSH set to $HOME/.oh-my-zsh"
+  echo
 else
-    export ZSH=$HOME/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 fi
 
 # load custom executable functions
@@ -25,16 +25,16 @@ fi
 [[ -f $HOME/.env ]] && source $HOME/.env
 
 # Local config
-# [[ -f $HOME/.dotfiles/system/.zshrc.local ]] && source ~$HOME/.dotfiles/system/.zshrc.local
+# [[ -f $HOME/dotfiles/system/.zshrc.local ]] && source ~$HOME/dotfiles/system/.zshrc.local
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 ZSH_THEME="af-magic"
 
 plugins=(
-    rails
-    ruby
-    git
-    nvm
+  rails
+  ruby
+  git
+  nvm
 )
 
 # general ruby scripts
@@ -52,14 +52,14 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
-# [[ -f $HOME/.dotfiles/system/.aliases ]] && source $HOME/.dotfiles/system/.aliases
+# [[ -f $HOME/dotfiles/system/.aliases ]] && source $HOME/dotfiles/system/.aliases
 
 # add bash functions
 [[ -f $HOME/.functions ]] && source $HOME/.functions
 # add postgres helper functions
 [[ -f $HOME/.postgres_functions ]] && source $HOME/.postgres_functions
 
-# [[ -f $HOME/.dotfiles/system/.functions ]] && source $HOME/.dotfiles/system/.functions
+# [[ -f $HOME/dotfiles/system/.functions ]] && source $HOME/dotfiles/system/.functions
 
 # fuzzy find
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
@@ -80,10 +80,10 @@ export PATH=$HOME/anaconda3/bin:$PATH
 
 # python
 if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
-    echo "PATH includes ~/.pyenv/shims:"
-    echo
+  echo "PATH includes ~/.pyenv/shims:"
+  echo
 else
-    eval "$(pyenv init -)"
+  eval "$(pyenv init -)"
 fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
