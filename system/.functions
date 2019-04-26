@@ -27,19 +27,19 @@ get_all_pcr_schemas() {
 
 # Source zshrc
 src_zsh(){
-  source $HOME/.dotfiles/system/.zshrc
+  source $HOME/dotfiles/system/.zshrc
   echo "zshrc loaded"
 }
 
 # Source aliases
 src_als(){
-  source $HOME/.dotfiles/system/.aliases
+  source $HOME/dotfiles/system/.aliases
   echo "aliases loaded"
 }
 
 # Source functions
 src_fun(){
-  source $HOME/.dotfiles/system/.functions
+  source $HOME/dotfiles/system/.functions
   echo "functions loaded"
 }
 
@@ -71,37 +71,42 @@ symlink_pre_commit_hook(){
   echo "Linking "
   echo ".git/hooks/pre-commit"
   echo "to"
-  echo $HOME/.dotfiles/git/hooks/$1-pre-commit
+  echo $HOME/dotfiles/git/hooks/$1-pre-commit
   lang=$1
-  ln -svf $HOME/.dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
+  ln -svf $HOME/dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
 }
 
+destroy_dotfile_links(){
+  echo "destroying dotfile links"
+  echo "not yet implemented"
+}
+
 link_dotfiles(){
-  ln -sf $HOME/.dotfiles/system/.aliases $HOME/.aliases
-  ln -sf $HOME/.dotfiles/system/new_aliases $HOME/.new_functions
+  ln -sf $HOME/dotfiles/system/.aliases $HOME/.aliases
+  ln -sf $HOME/dotfiles/system/new_aliases $HOME/.new_functions
   
   # TODO: switch from .functions file to .functions folder
-  ln -sf $HOME/.dotfiles/system/.functions $HOME/.functions
-  ln -sf $HOME/.dotfiles/system/new_functions $HOME/.new_functions
-  ln -sf $HOME/.dotfiles/system/.zshrc $HOME/.zshrc
-  ln -sf $HOME/.dotfiles/system/.zshrc.local $HOME/.zshrc.local
-  # ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
-  # ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
-  ln -sf $HOME/.dotfiles/system/.env $HOME/.env
-  # ln -sf $HOME/.dotfiles $HOME/dotfiles
+  ln -sf $HOME/dotfiles/system/.functions $HOME/.functions
+  ln -sf $HOME/dotfiles/system/new_functions $HOME/.new_functions
+  ln -sf $HOME/dotfiles/system/.zshrc $HOME/.zshrc
+  ln -sf $HOME/dotfiles/system/.zshrc.local $HOME/.zshrc.local
+  # ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+  # ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
+  ln -sf $HOME/dotfiles/system/.env $HOME/.env
+  # ln -sf $HOME/dotfiles $HOME/dotfiles
   echo "dotfiles linked"
 }
 
 link_gitconfig(){
-  cat $HOME/.dotfiles/git/gitconfig
+  cat $HOME/dotfiles/git/gitconfig
   
   echo ""
   echo "Make above gitconfig global?[y/n]"
   read answer
   
   if [ $answer == "y" ]; then
-    ln -sf $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
+    ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
     echo "gitconfig linked"
   else
     echo "Not linking gitconfig"
@@ -109,7 +114,7 @@ link_gitconfig(){
 }
 
 link_global_gitignore(){
-  ln -sf $HOME/.dotfiles/git/gitignore_global $HOME/.gitignore_global
+  ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
   echo "global_gitignore linked"
 }
 
