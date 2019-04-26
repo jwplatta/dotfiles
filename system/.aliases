@@ -1,8 +1,9 @@
 # Source alias files
-source $HOME/.new_aliases/git
-source $HOME/.new_aliases/ruby
-source $HOME/.new_aliases/rails
-source $HOME/.new_aliases/mix_elixir
+source $HOME/dotfiles/system/aliases/git
+source $HOME/dotfiles/system/aliases/ruby
+source $HOME/dotfiles/system/aliases/rails
+source $HOME/dotfiles/system/aliases/mix_elixir
+source $HOME/dotfiles/system/aliases/test
 
 # General
 alias als="cat $HOME/dotfiles/system/.aliases"

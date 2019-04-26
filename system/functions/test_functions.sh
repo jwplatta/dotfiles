@@ -11,3 +11,7 @@ function git_aliases() {
     echo "$p"
   done <$HOME/.new_aliases/git
 }
+
+function test_fun() {
+  echo "test function works!"
+}
