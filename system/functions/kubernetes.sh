@@ -1,4 +1,5 @@
-# Kubernetes
+#!/bin/sh
+
 pod_connect() {
   pod_name=$1
   kubectl exec -it $pod_name -- /bin/bash

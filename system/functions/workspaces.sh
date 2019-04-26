@@ -1,3 +1,8 @@
+#!/bin/sh
+
+function create_workspace(){
+  echo "implement me"
+}
 
 function open_notes(){
   if [ -z "$1" ]; then
@@ -60,4 +65,12 @@ function open_workspace(){
 
 function data_sci_ws(){
   code $HOME/vsc_workspaces/data_science_ws.code-workspace
+}
+
+function playground_ws(){
+  code $HOME/vsc_workspaces/playground_ws.code-workspace
+}
+
+function js_le_tutorial_ws(){
+  code $HOME/vsc_workspaces/js_le_tutorial_ws.code-workspace
 }

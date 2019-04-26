@@ -1,9 +1,10 @@
-# get procore-reporting schemas
+#!/bin/sh
 
 function ls_dbs(){
   psql -p $1 -U $2 -w -l
 }
 
+# get procore-reporting schemas
 function get_all_pcr_schemas() {
   find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
   xargs cat |
