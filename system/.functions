@@ -3,66 +3,33 @@
 # TODO: Start refactoring functions out of this file and into
 # new_functions folder.
 
-source $HOME/dotfiles/system/functions/docker_functions.sh
-source $HOME/dotfiles/system/functions/test_functions.sh
+source $HOME/dotfiles/system/functions/docker.sh
+source $HOME/dotfiles/system/functions/kubernetes.sh
+source $HOME/dotfiles/system/functions/postgresql.sh
+source $HOME/dotfiles/system/functions/linux.sh
+source $HOME/dotfiles/system/functions/source_dotfiles.sh
+source $HOME/dotfiles/system/functions/git.sh
+source $HOME/dotfiles/system/functions/open_workspaces.sh
+source $HOME/dotfiles/system/functions/test.sh
 
-# Create a new directory and enter it
-function mk() {
-  mkdir -p "$@" && cd "$@"
-}
-
-# Open man page as PDF
-function manpdf() {
-  man -t "${1}" | open -f -a /Applications/Preview.app/
-}
-
-# get procore-reporting schemas
-get_all_pcr_schemas() {
-  find . -path "*lib/procore_reporting/bi_temporal/schemas/*.ex" |
-  xargs cat |
-  grep BiTemp.*do |
-  sed 's/def.*BiT.*\.\(.*\) do/\1/' |
-  sort
-}
-
-# Source zshrc
-src_zsh(){
-  source $HOME/dotfiles/system/.zshrc
-  echo "zshrc loaded"
-}
-
-# Source aliases
-src_als(){
-  source $HOME/dotfiles/system/.aliases
-  echo "aliases loaded"
-}
-
-# Source functions
-src_fun(){
-  source $HOME/dotfiles/system/.functions
-  echo "functions loaded"
-}
-
-# Kubernetes
-pod_connect() {
-  pod_name=$1
-  kubectl exec -it $pod_name -- /bin/bash
-}
-
-pod_select() {
-  shipment=$1
-  app=$2
+link_dotfiles(){
+  ln -sf $HOME/dotfiles/system/.aliases $HOME/.aliases
+  ln -sf $HOME/dotfiles/system/.functions $HOME/.functions
+  ln -sf $HOME/dotfiles/system/.zshrc $HOME/.zshrc
+  ln -sf $HOME/dotfiles/system/.zshrc.local $HOME/.zshrc.local
+  ln -sf $HOME/dotfiles/system/.env $HOME/.env
   
-  if [[ -n $app ]]; then
-    kubectl get pods --selector=shipment=$shipment,app=$app
-  else
-    kubectl get pods --selector=shipment=$shipment
-  fi
+  # ln -sf $HOME/dotfiles/system/new_aliases $HOME/.new_functions
+  # ln -sf $HOME/dotfiles/system/new_functions $HOME/.new_functions
+  # ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+  # ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
+  # ln -sf $HOME/dotfiles $HOME/dotfiles
+  echo "dotfiles linked"
 }
 
-pcr_pods() {
-  shipment=$1
-  pod_select $shipment procore-reporting
+destroy_dotfile_links(){
+  echo "destroying dotfile links"
+  echo "not yet implemented"
 }
 
 # Import symlinks
@@ -77,132 +44,9 @@ symlink_pre_commit_hook(){
   chmod +x .git/hooks/pre-commit
 }
 
-destroy_dotfile_links(){
-  echo "destroying dotfile links"
-  echo "not yet implemented"
-}
-
-link_dotfiles(){
-  ln -sf $HOME/dotfiles/system/.aliases $HOME/.aliases
-  ln -sf $HOME/dotfiles/system/.functions $HOME/.functions
-  ln -sf $HOME/dotfiles/system/.zshrc $HOME/.zshrc
-  ln -sf $HOME/dotfiles/system/.zshrc.local $HOME/.zshrc.local
-  ln -sf $HOME/dotfiles/system/.env $HOME/.env
-  
-  # ln -sf $HOME/dotfiles/system/new_aliases $HOME/.new_functions
-  
-  # TODO: switch from .functions file to .functions folder
-  # ln -sf $HOME/dotfiles/system/new_functions $HOME/.new_functions
-  # ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
-  # ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
-  # ln -sf $HOME/dotfiles $HOME/dotfiles
-  echo "dotfiles linked"
-}
-
-link_gitconfig(){
-  cat $HOME/dotfiles/git/gitconfig
-  
-  echo ""
-  echo "Make above gitconfig global?[y/n]"
-  read answer
-  
-  if [ $answer == "y" ]; then
-    ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
-    echo "gitconfig linked"
-  else
-    echo "Not linking gitconfig"
-  fi
-}
-
-link_global_gitignore(){
-  ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
-  echo "global_gitignore linked"
-}
-
 ssh_jwplatta(){
   ssh-add ~/.ssh/jwplatta_github
   echo "jwplatta_github added"
-}
-
-function open_notes(){
-  if [ -z "$1" ]; then
-    code $HOME/vsc_workspaces/dev_notes.code-workspace
-  else
-    files=($(find $HOME/dev_notes -type f -name "*$1*"))
-    for ((i=0; i<=${#files[@]}; i++)); do
-      echo "[$i] ${files[$i]}"
-    done
-    
-    echo
-    echo "Enter file index: "
-    echo
-    
-    read file_number
-    
-    code $HOME/vsc_workspaces/dev_notes.code-workspace
-    code ${files[$file_number]}
-  fi
-}
-
-function open_prc_notes(){
-  code $HOME/vsc_workspaces/procore_notes.code-workspace
-}
-
-function open_dotfiles(){
-  code $HOME/vsc_workspaces/dotfiles.code-workspace
-}
-
-function prc_ws(){
-  code $HOME/vsc_workspaces/procore_app.code-workspace
-  
-  # if [ -z $1 ]; then
-  # else
-  # files=($(find $HOME/procore -type f -name "*$1*"))
-  # echo $files
-  # for ((i=0; i<=${#files[@]}; i++)); do
-  #   echo "[$i] ${files[$i]}"
-  # done
-  
-  # echo
-  # echo "Enter file index: "
-  # echo
-  
-  # read file_index
-  
-  # code $HOME/vsc_workspaces/procore_app.code-workspace
-  # code ${files[$file_index]}
-  # fi
-}
-
-function pit_ws(){
-  code $HOME/vsc_workspaces/point_in_time_reporting.code-workspace
-}
-
-function open_workspace(){
-  workspace = $1
-  echo "Implement me so I can open $workspace"
-}
-
-function reset_prc_db_vol(){
-  rm -rf $HOME/docker/volumes/procore_db
-  mkdir $HOME/docker/volumes/procore_db
-}
-
-function reset_pit_db_vol(){
-  rm -rf $HOME/docker/volumes/procore_reporting_db
-  mkdir $HOME/docker/volumes/procore_reporting_db
-}
-
-function start_pit_db(){
-  docker run --rm --name pit_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d -p 5433:5432 -v $HOME/docker/volumes/procore_reporting_db:/var/lib/postgresql/data postgres:10.5
-}
-
-function start_prc_db(){
-  docker run --rm --name prc_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=procore_db -d -p 5432:5432 -v $HOME/docker/volumes/procore_db:/var/lib/postgresql/data postgres:9.6.9
-}
-
-function data_sci_ws(){
-  code $HOME/vsc_workspaces/data_science_ws.code-workspace
 }
 
 function start_jupyter_nb(){
