@@ -1,7 +1,27 @@
 #!/bin/sh
 
+function new_workspace(){
+  mkdir $HOME/repos/$1
+  create_workspace $1
+  # open_workspace $1
+  code -a $HOME/repos/$1
+}
+
 function create_workspace(){
-  echo "implement me"
+  code -n $HOME/vsc_workspaces/$1.code-workspace
+}
+
+function rm_workspace(){
+  rm -rf $HOME/repos/$1
+  rm -rf $HOME/vsc_workspaces/$1.code-workspace
+}
+
+function ls_workspaces(){
+  ls $HOME/vsc_workspaces
+}
+
+function open_workspace(){
+  code $HOME/vsc_workspaces/$1.code-workspace
 }
 
 function open_notes(){
@@ -56,11 +76,6 @@ function prc_ws(){
 
 function pit_ws(){
   code $HOME/vsc_workspaces/point_in_time_reporting.code-workspace
-}
-
-function open_workspace(){
-  workspace = $1
-  echo "Implement me so I can open $workspace"
 }
 
 function data_sci_ws(){
