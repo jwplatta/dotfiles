@@ -1,17 +1,17 @@
 # Source zshrc
 src_zsh(){
-  source $HOME/dotfiles/system/.zshrc
+  source $HOME/.zshrc
   echo "zshrc loaded"
 }
 
 # Source aliases
 src_als(){
-  source $HOME/dotfiles/system/.aliases
+  source $HOME/.aliases
   echo "aliases loaded"
 }
 
 
 src_fun(){
-  source $HOME/dotfiles/system/.functions
+  source $HOME/.functions
   echo "functions loaded"
 }

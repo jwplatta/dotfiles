@@ -1,5 +1,7 @@
 # Joe Platta's Dotfiles
 ## Notes/TODO
+* Write ruby code to write new bash functions for opening added workspaces
+* Implement destroy dotfile links
 * githook for rubocop
 * elixir stuff, e.g. IEx shell
 * .irbrc
