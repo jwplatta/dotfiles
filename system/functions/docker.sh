@@ -1,9 +1,9 @@
-# Create a new directory and enter it
-mk() {
-    mkdir -p "$@" && cd "$@"
+#!/bin/sh
+
+start_pit_db(){
+  docker run --rm --name pit_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d -p 5433:5432 -v $HOME/docker/volumes/procore_reporting_db:/var/lib/postgresql/data postgres:10.5
 }
 
-# Open man page as PDF
-manpdf() {
-    man -t "${1}" | open -f -a /Applications/Preview.app/
+start_prc_db(){
+  docker run --rm --name prc_db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=procore_db -d -p 5432:5432 -v $HOME/docker/volumes/procore_db:/var/lib/postgresql/data postgres:9.6.9
 }
