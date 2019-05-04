@@ -1,0 +1,47 @@
+{
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "off",
+  "[markdown]": {
+    "editor.quickSuggestions": false
+  },
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "window.zoomLevel": 1,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "explorer.confirmDelete": false,
+  "ruby.intellisense": "rubyLocate",
+  "terraform.format": {
+    "enable": true,
+    "ignoreExtensionsOnSave": [
+      ".tfsmurf"
+    ],
+    "formatOnSave": false
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "bashBeautify.tabSize": 2,
+  "editor.formatOnSave": true,
+  "ruby.rubocop.executePath": "",
+  "ruby.lint": {
+    "reek": true,
+    "rubocop": true,
+    "ruby": true, //Runs ruby -wc
+    "fasterer": true,
+    "debride": true,
+    "ruby-lint": true
+  },
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.editor.enablePreview": false
+}

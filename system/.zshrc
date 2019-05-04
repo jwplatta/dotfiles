@@ -90,9 +90,8 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # asdf
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-echo $PATH
-echo
 

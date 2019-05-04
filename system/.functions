@@ -9,45 +9,92 @@ source $HOME/dotfiles/system/functions/git.sh
 source $HOME/dotfiles/system/functions/open_workspaces.sh
 source $HOME/dotfiles/system/functions/test.sh
 
-link_dotfiles(){
-    ln -sf $HOME/dotfiles/system/.aliases $HOME/.aliases
-    ln -sf $HOME/dotfiles/system/.functions $HOME/.functions
-    ln -sf $HOME/dotfiles/system/.zshrc $HOME/.zshrc
-    ln -sf $HOME/dotfiles/system/.zshrc.local $HOME/.zshrc.local
-    ln -sf $HOME/dotfiles/system/.env $HOME/.env
-    ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
-    
-    # ln -sf $HOME/dotfiles/system/new_aliases $HOME/.new_functions
-    # ln -sf $HOME/dotfiles/system/new_functions $HOME/.new_functions
-    # ln -sf $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
-    # ln -sf $HOME/dotfiles/git/gitignore_global $HOME/.gitignore_global
-    # ln -sf $HOME/dotfiles $HOME/dotfiles
-    echo "dotfiles linked"
+link-df(){
+  link-als
+  link-fun
+  link-zsh
+  link-zsh-lcl
+  link-env
+  link-gitignore
+  link-vsc-settings
+  link-vsc-keybindings
+  echo "dotfiles linked"
+}
+
+link-gitignore(){
+  DEST="$HOME/.gitignore_global"
+  ln -sf $HOME/dotfiles/git/gitignore_global $DEST
+  print_destination $DEST
+}
+
+link-env(){
+  DEST="$HOME/.env"
+  ln -sf $HOME/dotfiles/system/.env $DEST
+  print_destination $DEST
+}
+
+link-zsh(){
+  DEST="$HOME/.zshrc"
+  ln -sf $HOME/dotfiles/system/.zshrc $DEST
+  print_destination $DEST
+}
+
+link-zsh-lcl(){
+  DEST="$HOME/.zshrc.local"
+  ln -sf $HOME/dotfiles/system/.zshrc.local $DEST
+  print_destination $DEST
+}
+
+link-als(){
+  DEST="$HOME/.aliases"
+  ln -sf $HOME/dotfiles/system/.aliases $DEST
+  print_destination $DEST
+}
+
+link-fun(){
+  DEST="$HOME/.functions"
+  ln -sf $HOME/dotfiles/system/.functions $DEST
+  print_destination $DEST
+}
+
+link-vsc-settings(){
+  DEST="$HOME/Library/Application Support/Code/User/settings.json"
+  ln -sf $HOME/dotfiles/vs_code/settings.json $DEST
+  print_destination $DEST
+}
+
+link-vsc-keybindings(){
+  DEST="$HOME/Library/Application Support/Code/User/keybindings.json"
+  ln -sf $HOME/dotfiles/vs_code/keybindings.json "$DEST"
+  print_destination $DEST
+}
+
+print_destination(){
+  echo "Linked to: $1"
 }
 
 destroy_dotfile_links(){
-    echo "destroying dotfile links"
-    echo "not yet implemented"
+  echo "destroying dotfile links"
+  echo "not yet implemented"
 }
 
 # Import symlinks
 symlink_pre_commit_hook(){
-    
-    echo "Linking "
-    echo ".git/hooks/pre-commit"
-    echo "to"
-    echo $HOME/dotfiles/git/hooks/$1-pre-commit
-    lang=$1
-    ln -svf $HOME/dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
-    chmod +x .git/hooks/pre-commit
+  echo "Linking "
+  echo ".git/hooks/pre-commit"
+  echo "to"
+  echo $HOME/dotfiles/git/hooks/$1-pre-commit
+  lang=$1
+  ln -svf $HOME/dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
+  chmod +x .git/hooks/pre-commit
 }
 
 ssh_jwplatta(){
-    ssh-add ~/.ssh/jwplatta_github
-    echo "jwplatta_github added"
+  ssh-add ~/.ssh/jwplatta_github
+  echo "jwplatta_github added"
 }
 
 start_jupyter_nb(){
-    cd $HOME/Documents/data_science/notebooks
-    jupyter notebook
+  cd $HOME/Documents/data_science/notebooks
+  jupyter notebook
 }
