@@ -10,13 +10,13 @@ ws-notes(){
     for ((i=0; i<=${#files[@]}; i++)); do
       echo "[$i] ${files[$i]}"
     done
-    
+
     echo
     echo "Enter file index: "
     echo
-    
+
     read file_number
-    
+
     code $HOME/vsc_workspaces/dev_notes.code-workspace
     code ${files[$file_number]}
   fi
@@ -32,7 +32,7 @@ ws-df(){
 
 ws-prc(){
   code $HOME/vsc_workspaces/procore_app.code-workspace
-  
+
   # if [ -z $1 ]; then
   # else
   # files=($(find $HOME/procore -type f -name "*$1*"))
@@ -40,13 +40,13 @@ ws-prc(){
   # for ((i=0; i<=${#files[@]}; i++)); do
   #   echo "[$i] ${files[$i]}"
   # done
-  
+
   # echo
   # echo "Enter file index: "
   # echo
-  
+
   # read file_index
-  
+
   # code $HOME/vsc_workspaces/procore_app.code-workspace
   # code ${files[$file_index]}
   # fi
@@ -85,13 +85,13 @@ ws-notes-old(){
     for ((i=0; i<=${#files[@]}; i++)); do
       echo "[$i] ${files[$i]}"
     done
-    
+
     echo
     echo "Enter file index: "
     echo
-    
+
     read file_number
-    
+
     code $HOME/vsc_workspaces/dev_notes.code-workspace
     code ${files[$file_number]}
   fi
