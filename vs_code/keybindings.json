@@ -31,5 +31,21 @@
   {
     "key": "ctrl+g",
     "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "workbench.action.terminal.focusPrevious"
+  },
+  {
+    "key": "cmd+i",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "alt+cmd+=",
+    "command": "workbench.action.toggleMaximizedPanel"
   }
 ]
