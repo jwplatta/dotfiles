@@ -45,5 +45,7 @@
   "workbench.colorTheme": "Solarized Dark",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": true,
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
