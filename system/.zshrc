@@ -78,6 +78,10 @@ export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
 # anaconda
 export PATH=$HOME/anaconda3/bin:$PATH
 
+# openssl
+export PATH=/usr/local/openssl/bin:$PATH
+export MANPATH=/usr/local/openssl/share/man:$MANPATH
+
 # python
 if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
   echo "PATH includes ~/.pyenv/shims:"
@@ -90,7 +94,6 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # asdf
-
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
