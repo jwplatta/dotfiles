@@ -8,6 +8,7 @@ source $HOME/dotfiles/system/functions/source_dotfiles.sh
 source $HOME/dotfiles/system/functions/git.sh
 source $HOME/dotfiles/system/functions/open_workspaces.sh
 source $HOME/dotfiles/system/functions/install.sh
+source $HOME/dotfiles/system/functions/vim_setup.sh
 
 link-df(){
   link-als
@@ -18,6 +19,9 @@ link-df(){
   link-gitignore
   link-vsc-settings
   link-vsc-keybindings
+  link-vimrc
+  link-bashrc
+  link-bash-profile
   echo "dotfiles linked"
 }
 
@@ -42,6 +46,24 @@ link-zsh(){
 link-zsh-lcl(){
   DEST="$HOME/.zshrc.local"
   ln -sf $HOME/dotfiles/system/.zshrc.local $DEST
+  print_destination $DEST
+}
+
+link-vimrc(){
+  DEST="$HOME/.vimrc"
+  ln -sf $HOME/dotfiles/system/.vimrc $DEST
+  print_destination $DEST
+}
+
+link-bashrc(){
+  DEST="$HOME/.bashrc"
+  ln -sf $HOME/dotfiles/system/.bashrc $DEST
+  print_destination $DEST
+}
+
+link-bash-profile(){
+  DEST="$HOME/.bash_profile"
+  ln -sf $HOME/dotfiles/system/.bash_profile $DEST
   print_destination $DEST
 }
 

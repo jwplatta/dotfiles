@@ -1,4 +1,8 @@
 # Joe Platta's Dotfiles
+
+## Install
+1. `~$ git clone git@github.com:jplatta/dotfiles.git`
+
 ## Notes/TODO
 * Write ruby code to write new bash functions for opening added workspaces
 * Implement destroy dotfile links
