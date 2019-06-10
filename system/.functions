@@ -30,76 +30,76 @@ link-df(){
 link-gitignore(){
   DEST="$HOME/.gitignore_global"
   ln -sf $HOME/dotfiles/git/gitignore_global $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-env(){
   DEST="$HOME/.env"
   ln -sf $HOME/dotfiles/system/.env $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-zsh(){
   DEST="$HOME/.zshrc"
   ln -sf $HOME/dotfiles/system/.zshrc $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-zsh-lcl(){
   DEST="$HOME/.zshrc.local"
   ln -sf $HOME/dotfiles/system/.zshrc.local $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-vimrc(){
   DEST="$HOME/.vimrc"
   ln -sf $HOME/dotfiles/system/.vimrc $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-bashrc(){
   DEST="$HOME/.bashrc"
   ln -sf $HOME/dotfiles/system/.bashrc $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-bash-profile(){
   DEST="$HOME/.bash_profile"
   ln -sf $HOME/dotfiles/system/.bash_profile $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-als(){
   DEST="$HOME/.aliases"
   ln -sf $HOME/dotfiles/system/.aliases $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-fun(){
   DEST="$HOME/.functions"
   ln -sf $HOME/dotfiles/system/.functions $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-vsc-settings(){
   DEST="$HOME/Library/Application Support/Code/User/settings.json"
   ln -sf $HOME/dotfiles/vs_code/settings.json $DEST
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-vsc-keybindings(){
   DEST="$HOME/Library/Application Support/Code/User/keybindings.json"
   ln -sf $HOME/dotfiles/vs_code/keybindings.json "$DEST"
-  print_destination $DEST
+  print-dest $DEST
 }
 
 link-tool-versions(){
   DEST="$HOME/.tool-versions"
   ln -sf $HOME/dotfiles/.tool-versions "$DEST"
-  print_destination $DEST
+  print-dest $DEST
 }
 
-print_destination(){
+print-dest(){
   echo "Linked to: $1"
 }
 
