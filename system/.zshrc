@@ -93,6 +93,12 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# rust/carge
+source $HOME/.cargo/bin
+
+# kubernetes autocomplete
+source <(kubectl completion zsh);
+
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

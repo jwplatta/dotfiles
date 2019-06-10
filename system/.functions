@@ -9,6 +9,7 @@ source $HOME/dotfiles/system/functions/git.sh
 source $HOME/dotfiles/system/functions/open_workspaces.sh
 source $HOME/dotfiles/system/functions/install.sh
 source $HOME/dotfiles/system/functions/vim_setup.sh
+source $HOME/dotfiles/system/functions/ruby.sh
 
 link-df(){
   link-als
@@ -22,6 +23,7 @@ link-df(){
   link-vimrc
   link-bashrc
   link-bash-profile
+  link-tool-versions
   echo "dotfiles linked"
 }
 
@@ -88,6 +90,12 @@ link-vsc-settings(){
 link-vsc-keybindings(){
   DEST="$HOME/Library/Application Support/Code/User/keybindings.json"
   ln -sf $HOME/dotfiles/vs_code/keybindings.json "$DEST"
+  print_destination $DEST
+}
+
+link-tool-versions(){
+  DEST="$HOME/.tool-versions"
+  ln -sf $HOME/dotfiles/.tool-versions "$DEST"
   print_destination $DEST
 }
 
