@@ -103,13 +103,13 @@ print_destination(){
   echo "Linked to: $1"
 }
 
-destroy_dotfile_links(){
+destroy-dotfile-links(){
   echo "destroying dotfile links"
   echo "not yet implemented"
 }
 
 # Import symlinks
-symlink_pre_commit_hook(){
+symlink-pre-commit(){
   echo "Linking "
   echo ".git/hooks/pre-commit"
   echo "to"
@@ -119,12 +119,12 @@ symlink_pre_commit_hook(){
   chmod +x .git/hooks/pre-commit
 }
 
-ssh_jwplatta(){
+ssh-jwplatta(){
   ssh-add ~/.ssh/jwplatta_github
   echo "jwplatta_github added"
 }
 
-start_jupyter_nb(){
+start-jupyter(){
   cd $HOME/Documents/data_science/notebooks
   jupyter notebook
 }
