@@ -1,5 +1,7 @@
 vim-setup-all(){
   echo "implement vim setup all"
+  mkdir-vim
+  install-colorscheme
 }
 
 mkdir-vim(){
