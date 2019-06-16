@@ -43,9 +43,9 @@ plugins=(
 # ruby scripts for procore
 # export PATH="$HOME/.scripts/ruby/scripts/procore"
 
-# path to node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Node version manager
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -91,7 +91,14 @@ else
 fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Ruby Version Manager
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# rust/carge
+source $HOME/.cargo/bin
+
+# kubernetes autocomplete
+source <(kubectl completion zsh);
 
 # kerl
 export KERL_BUILD_DOCS=yes
