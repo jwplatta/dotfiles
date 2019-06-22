@@ -1,5 +1,9 @@
+#!/bin/sh
 
-make-scratch(){
+scratch-make(){
+  echo "Creating ./scratch"
+  echo
+  
   mkdir ./scratch
   touch ./scratch/scratch.rb
   touch ./scratch/scratch.exs
@@ -14,30 +18,34 @@ make-scratch(){
   ls scratch
 }
 
-cleanup-scratch(){
+scratch-cleanup(){
   if [ -d "./scratch" ]; then
-    note-from-scratch
+    echo -n "Create note from scratch? (y/n)\n\n"
+    read ans
+    
+    if [ "$ans" = "y" ]; then
+      scratch-to-note
+    fi
+    
     rm -rf ./scratch
   else
     echo "./scratch does not exist."
   fi
 }
 
-note-from-stch(){
-  echo -n "Creating note from scratch? (y/n)"
-  read ans
-  echo $ans
+scratch-to-note(){
+  echo "Creating note"
 }
 
 scratch-exist(){
-  if [ -d ".scratch" ]; then
+  if [ -d "./scratch" ]; then
     echo "./scratch exists"
   else
-    echo -n "Create scratch?"
-    echo
+    echo "/.scratch does not exist."
+    echo -n "Create scratch?\n\n"
     read ans
     if [ "$ans" = "y" ]; then
-      echo "Creating ./scratch"
+      scratch-make
     else
       echo "Not creating ./scratch"
     fi
