@@ -10,6 +10,7 @@ source $HOME/dotfiles/system/functions/open_workspaces.sh
 source $HOME/dotfiles/system/functions/install.sh
 source $HOME/dotfiles/system/functions/vim_setup.sh
 source $HOME/dotfiles/system/functions/ruby.sh
+source $HOME/dotfiles/system/functions/scratch.sh
 
 link-df(){
   link-als
