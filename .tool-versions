@@ -1,5 +1,6 @@
 elixir 1.8.1
 erlang 22.0.2
-nodejs 8.16.0
+nodejs 10.15.3
 postgres 9.6.9
-ruby 2.4.4
+ruby 2.6.3
+python 2.7.16
