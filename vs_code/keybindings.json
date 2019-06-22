@@ -57,5 +57,15 @@
     "key": "ctrl+shift+l",
     "command": "editor.action.transformToLowercase",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+r",
+    "command": "vscode-postgres.runQuery",
+    "when": "editorLangId == 'postgres'"
+  },
+  {
+    "key": "f5",
+    "command": "-vscode-postgres.runQuery",
+    "when": "editorLangId == 'postgres'"
   }
 ]
