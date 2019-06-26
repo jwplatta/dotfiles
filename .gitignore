@@ -59,6 +59,7 @@ tmp/**/*
 !tmp/cache/.keep
 tags.temp
 tags.lock
+config.yml
 
 # Elixir
 .elixir_ls

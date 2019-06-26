@@ -1,0 +1,3 @@
+defaults:
+  notes_folder: notes
+needs_setup: true

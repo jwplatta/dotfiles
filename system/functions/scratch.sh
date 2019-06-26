@@ -1,6 +1,6 @@
 #!/bin/sh
 
-scratch-make(){
+scrx-mk(){
   echo "Creating ./scratch\n"
   
   mkdir ./scratch
@@ -17,14 +17,14 @@ scratch-make(){
   ls scratch
 }
 
-scratch-cleanup(){
+scrx-cln(){
   if [ -d "./scratch" ]; then
-    echo -n "Create note from scratch? (y/n)\n\n"
-    read ans
+    # echo -n "Create note from scratch? (y/n)\n\n"
+    # read ans
     
-    if [ "$ans" = "y" ]; then
-      scratch-to-note
-    fi
+    # if [ "$ans" = "y" ]; then
+    #   scratch-to-note
+    # fi
     
     rm -rf ./scratch
   else
@@ -32,12 +32,12 @@ scratch-cleanup(){
   fi
 }
 
-scratch-to-note(){
+scrx-note(){
   echo "Creating note"
   loc = $PWD
 }
 
-scratch-exist(){
+scrx-xst(){
   if [ -d "./scratch" ]; then
     echo "./scratch exists"
   else
@@ -85,6 +85,4 @@ test-scratch(){
   echo "${index_files[$file_index]}"
   
   /Users/jplatta/dotfiles/notetaker/lib/note_writer.rb "$index_files[$file_index]"
-  
-  vim "$HOME/dotfiles/scratch/code_note_one.md"
 }
