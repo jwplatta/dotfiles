@@ -26,7 +26,7 @@ module Notetaker
     def setup
       FileUtils.mkdir_p(notes_folder_path)
       config['needs_setup'] = false
-      File.open('../config.yml', 'w') { |f| YAML.dump(config, f) }
+      File.open(config_path, 'w') { |f| YAML.dump(config, f) }
     end
 
     def make_folder_for_today
@@ -38,7 +38,7 @@ module Notetaker
     end
 
     def config
-      @config ||= YAML.load_file('../config.yml')
+      @config ||= YAML.load_file(config_path)
     end
 
     def notes_folder_set?
@@ -55,6 +55,10 @@ module Notetaker
 
     def notes_folder_path
       "#{ENV['HOME']}/#{notes_folder}"
+    end
+
+    def config_path
+      "#{ENV['HOME']}/dotfiles/notetaker/config.yml"
     end
   end
 end

@@ -62,7 +62,6 @@ module Notetaker
     end
 
     def title
-
       @title ||= user_input
     end
 
@@ -71,6 +70,7 @@ module Notetaker
       new_title = STDIN.gets.chomp.downcase.tr(' ', '_')
 
       if File.exist?("#{path_to_folder}/#{new_title}.md")
+        puts "Note file already exists.\n\n"
         user_input
       else
         new_title
@@ -94,7 +94,7 @@ module Notetaker
     end
 
     def template_source
-      File.read('../templates/code_snippet.erb')
+      File.read("#{ENV['HOME']}/dotfiles/notetaker/templates/code_snippet.erb")
     end
 
     def setup
