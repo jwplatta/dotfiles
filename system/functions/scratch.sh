@@ -1,6 +1,6 @@
 #!/bin/sh
 
-scratch-make(){
+scrx-mk(){
   echo "Creating ./scratch\n"
   
   mkdir ./scratch
@@ -17,27 +17,15 @@ scratch-make(){
   ls scratch
 }
 
-scratch-cleanup(){
+scrx-cln(){
   if [ -d "./scratch" ]; then
-    echo -n "Create note from scratch? (y/n)\n\n"
-    read ans
-    
-    if [ "$ans" = "y" ]; then
-      scratch-to-note
-    fi
-    
     rm -rf ./scratch
   else
     echo "./scratch does not exist."
   fi
 }
 
-scratch-to-note(){
-  echo "Creating note"
-  loc = $PWD
-}
-
-scratch-exist(){
+scrx-xst(){
   if [ -d "./scratch" ]; then
     echo "./scratch exists"
   else
@@ -52,7 +40,11 @@ scratch-exist(){
   fi
 }
 
-test-scratch(){
+scrx-note(){
+  echo "Creating note"
+  loc=$PWD
+  echo $loc
+  
   currdir=${PWD##*/}
   if [ "$currdir" = "scratch" ]; then
     echo "current directory is scratch"
@@ -68,23 +60,18 @@ test-scratch(){
   for i in "${files[@]}"
   do
     index_files[$COUNTER]+=$i
-    echo $COUNTER
     let COUNTER=$COUNTER+1
   done
-  
-  echo $index_files[3]
   
   for k in ""${(@k)index_files}""
   do
     echo "[$k] ${index_files[$k]}"
   done
-  
-  echo "Select file:"
+  echo
+  echo "Which scratch file do you want to turn into a note?\n\n"
   read file_index
   
   echo "${index_files[$file_index]}"
   
-  /Users/jplatta/dotfiles/notetaker/lib/note_writer.rb "$index_files[$file_index]"
-  
-  vim "$HOME/dotfiles/scratch/code_note_one.md"
+  $HOME/dotfiles/notetaker/bin/run "$index_files[$file_index]"
 }

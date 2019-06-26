@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative File.join(ENV['HOME'], '/dotfiles/notetaker/lib/notetaker.rb')
+
+Notetaker::Setup.check
+Notetaker::NoteWriter.new(filename: ARGV[0]).write
