@@ -25,6 +25,7 @@ link-df(){
   link-bashrc
   link-bash-profile
   link-tool-versions
+  link-iex-global
   echo "dotfiles linked"
 }
 
@@ -97,6 +98,12 @@ link-vsc-keybindings(){
 link-tool-versions(){
   DEST="$HOME/.tool-versions"
   ln -sf $HOME/dotfiles/.tool-versions "$DEST"
+  print-dest $DEST
+}
+
+link-iex-global(){
+  DEST="$HOME/.iex.exs"
+  ln -sf $HOME/dotfiles/elixir/.iex.exs "$DEST"
   print-dest $DEST
 }
 
