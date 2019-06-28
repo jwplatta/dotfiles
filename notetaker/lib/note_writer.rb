@@ -2,6 +2,7 @@ module Notetaker
   class NoteWriter
     require 'yaml'
     require 'erb'
+    require 'date'
 
     DEFAULT_NOTES = ['Your notes go here.', '...'].freeze
     CODE_TO_EXT = { '.rb' => 'ruby',
