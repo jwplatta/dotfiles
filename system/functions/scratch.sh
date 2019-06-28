@@ -15,13 +15,23 @@ scrx-mk(){
   
   echo "\nwith files:\n"
   ls scratch
+  
+  cd ./scratch
 }
 
 scrx-cln(){
-  if [ -d "./scratch" ]; then
-    rm -rf ./scratch
+  echo "Are you sure you want to delete ./scratch?(y/n)\n\n"
+  read ans
+  
+  if [ "$ans" = "y" ]; then
+    if [ -d "./scratch" ]; then
+      rm -rf ./scratch
+      echo "./scratch removed."
+    else
+      echo "./scratch does not exist."
+    fi
   else
-    echo "./scratch does not exist."
+    echo "Exiting"
   fi
 }
 
@@ -33,7 +43,7 @@ scrx-xst(){
     echo -n "Create scratch?\n\n"
     read ans
     if [ "$ans" = "y" ]; then
-      scratch-make
+      scrx-mk
     else
       echo "Not creating ./scratch"
     fi
