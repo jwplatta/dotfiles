@@ -10,6 +10,7 @@ scrx-mk(){
   touch ./scratch/scratch.json
   touch ./scratch/scratch.sh
   touch ./scratch/scratch.md
+  touch ./scratch/scratch.py
   
   echo "Created folder:\n"
   ls | grep scratch
