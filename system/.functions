@@ -27,6 +27,7 @@ link-df(){
   link-bash-profile
   link-tool-versions
   link-iex-global
+  link_psqlrc
   echo "dotfiles linked"
 }
 
@@ -105,6 +106,12 @@ link-tool-versions(){
 link-iex-global(){
   DEST="$HOME/.iex.exs"
   ln -sf $HOME/dotfiles/elixir/.iex.exs "$DEST"
+  print-dest $DEST
+}
+
+link_psqlrc(){
+  DEST=DEST="$HOME/.psqlrc"
+  ln -sf $HOME/dotfiles/postgres/.psqlrc
   print-dest $DEST
 }
 
