@@ -51,7 +51,7 @@ db/*.sqlite3
 #
 .bundle
 .byebug_history
-.env
+system/env/local
 log/*.log
 tags
 !tags/
