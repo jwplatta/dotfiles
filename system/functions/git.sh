@@ -23,3 +23,8 @@ link-git-hooks(){
   
   echo "git hooks linked"
 }
+
+gdf(){
+  git diff --name-only master
+}
+
