@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ls_dbs(){
+ls-dbs(){
   psql -p $1 -U $2 -w -l
 }
 

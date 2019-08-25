@@ -9,6 +9,7 @@ scrx-mk(){
   touch ./scratch/scratch.sql
   touch ./scratch/scratch.json
   touch ./scratch/scratch.sh
+  touch ./scratch/scratch.md
   touch ./scratch/scratch.py
   
   echo "Created folder:\n"
@@ -51,7 +52,7 @@ scrx-xst(){
   fi
 }
 
-scrx-note(){
+mk-note(){
   echo "Creating note"
   loc=$PWD
   echo $loc

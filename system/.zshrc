@@ -100,6 +100,9 @@ source $HOME/.cargo/bin
 # kubernetes autocomplete
 source <(kubectl completion zsh);
 
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 # kerl
 export KERL_BUILD_DOCS=yes
 echo $KERL_BUILD_DOCS
