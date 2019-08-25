@@ -1,19 +1,5 @@
 # Aliases
-
-alias q=’exit’
-alias c=’clear’
-alias h=’history’
-alias cs=’clear;ls’
-alias p=’cat’
-alias lsa=’ls -a’
-alias lsl=’ls -l’
-alias t=’time’
-alias k='kill'
-alias null=’/dev/null’
-
-alias ..='cd ..'
-alias ...='cd ..; cd ..'
-alias ....='cd ..; cd ..; cd ..'
+[[ -f $HOME/.aliases ]] && source $HOME/.aliases
 
 export EDITOR=vim
 export GREP_OPTIONS=' — color=auto'
