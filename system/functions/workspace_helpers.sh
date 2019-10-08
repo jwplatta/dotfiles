@@ -31,12 +31,12 @@ open_ws(){
   fi
 }
 
-file_exists?(){
-  FILE=$1
-  if [ -f $FILE ]; then
-    return 0
-  else
-    echo "Does not exist: $FILE"
-    return 1
-  fi
-}
+# file_exists?(){
+#   FILE=$1
+#   if [ -f $FILE ]; then
+#     return 0
+#   else
+#     echo "Does not exist: $FILE"
+#     return 1
+#   fi
+# }

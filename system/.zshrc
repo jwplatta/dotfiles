@@ -1,3 +1,4 @@
+echo "Loading ZSHRC from dotfiles"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -28,13 +29,39 @@ fi
 # [[ -f $HOME/dotfiles/system/.zshrc.local ]] && source ~$HOME/dotfiles/system/.zshrc.local
 [[ -f $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
-ZSH_THEME="af-magic"
+# ZSH_THEME="af-magic"
+# ZSH_THEME="platypus"
+# ZSH_THEME="nebirhos"
+ZSH_THEME="nicoulaj"
 
 plugins=(
-  rails
-  ruby
+  asdf
+  brew
+  dash
+  docker
+  fzf
   git
+  github
+  kubectl
+  man
+  mix
+  node
+  npm
   nvm
+  osx
+  otp
+  postgres
+  pyenv
+  python
+  rails
+  rake
+  ruby
+  tmux
+  vagrant
+  vagrant-prompt
+  vscode
+  xcode
+  web-search
 )
 
 # general ruby scripts
@@ -56,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # add bash functions
 [[ -f $HOME/.functions ]] && source $HOME/.functions
+
 # add postgres helper functions
 [[ -f $HOME/.postgres_functions ]] && source $HOME/.postgres_functions
 
@@ -89,13 +117,6 @@ if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
 else
   eval "$(pyenv init -)"
 fi
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# Ruby Version Manager
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# rust/carge
-source $HOME/.cargo/bin
 
 # kubernetes autocomplete
 source <(kubectl completion zsh);
@@ -105,7 +126,6 @@ source <(kubectl completion zsh);
 
 # kerl
 export KERL_BUILD_DOCS=yes
-echo $KERL_BUILD_DOCS
 
 # asdf
 . $HOME/.asdf/asdf.sh

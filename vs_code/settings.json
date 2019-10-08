@@ -342,5 +342,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "C_Cpp.updateChannel": "Insiders"
 }
