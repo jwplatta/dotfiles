@@ -29,4 +29,5 @@
 ## Other
 
 * [Setup mac](https://sourabhbajaj.com/mac-setup/Homebrew/)
+* create custom oh-my-zsh theme in `.oh-my-zsh/themes/theme_name.zsh-theme` 
 
