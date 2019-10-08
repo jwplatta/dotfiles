@@ -11,6 +11,7 @@ alias als="cat $HOME/dotfiles/system/.aliases"
 alias ezsh="code $HOME/dotfiles/system/.zshrc"
 alias eals="code $HOME/dotfiles/system/.aliases"
 alias efun="code $HOME/dotfiles/system/.functions"
+alias op_n="code $HOME/notes"
 
 # Docker
 alias dcontainers="docker container list"
