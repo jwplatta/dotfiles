@@ -4,7 +4,6 @@ source $HOME/dotfiles/system/aliases/ruby
 source $HOME/dotfiles/system/aliases/rails
 source $HOME/dotfiles/system/aliases/mix_elixir
 source $HOME/dotfiles/system/aliases/kubernetes
-source $HOME/dotifles/system/aliases/docker
 
 # General
 alias als="cat $HOME/dotfiles/system/.aliases"
@@ -14,6 +13,7 @@ alias efun="code $HOME/dotfiles/system/.functions"
 alias op_n="code $HOME/notes"
 
 # Docker
+alias d="docker"
 alias dcontainers="docker container list"
 alias dvols="ls $HOME/docker/volumes"
 
