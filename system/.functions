@@ -57,7 +57,7 @@ link-zsh-lcl(){
 
 link-vimrc(){
   DEST="$HOME/.vimrc"
-  ln -sf $HOME/dotfiles/system/.vimrc $DEST
+  ln -sf $HOME/dotfiles/system/vim/.vimrc $DEST
   print-dest $DEST
 }
 
