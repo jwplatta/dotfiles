@@ -39,7 +39,7 @@ link-gitignore(){
 
 link-env(){
   DEST="$HOME/.env"
-  ln -sf $HOME/dotfiles/system/.env_defualts $DEST
+  ln -sf $HOME/dotfiles/system/.env_defaults $DEST
   print-dest $DEST
 }
 
