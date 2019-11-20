@@ -14,3 +14,8 @@ src-fun(){
   source $HOME/.functions
   echo "functions loaded"
 }
+
+src-env(){
+  source $HOME/.env
+  echo "env loaded"
+}

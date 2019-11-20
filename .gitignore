@@ -63,3 +63,6 @@ config.yml
 
 # Elixir
 .elixir_ls
+
+# local git
+.gitconfig
