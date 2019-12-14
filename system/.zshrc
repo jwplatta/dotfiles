@@ -99,7 +99,7 @@ export EDITOR='vim'
 
 #Use brew install versions
 # export PATH=/usr/local/opt/postgresql@9.6/bin/:$PATH
-export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
+# export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
 
 # git
 [ -s "/Users/josephplatta/.scm_breeze/scm_breeze.sh" ] && source "/Users/josephplatta/.scm_breeze/scm_breeze.sh"
@@ -131,14 +131,14 @@ export KERL_BUILD_DOCS=yes
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/josephplatta/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(''$HOME'/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
   eval "$__conda_setup"
 else
-  if [ -f "/Users/josephplatta/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/Users/josephplatta/anaconda3/etc/profile.d/conda.sh"
+  if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "$HOME/anaconda3/etc/profile.d/conda.sh"
   else
-    export PATH="/Users/josephplatta/anaconda3/bin:$PATH"
+    export PATH="$HOME/anaconda3/bin:$PATH"
   fi
 fi
 unset __conda_setup
