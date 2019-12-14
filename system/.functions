@@ -30,6 +30,7 @@ link-df(){
   link_psqlrc
   link-condarc
   link-tmux-conf
+  link-gitconfig
   echo "dotfiles linked"
 }
 
@@ -126,6 +127,12 @@ link-condarc(){
 link-tmux-conf(){
   DEST="$HOME/.tmux.conf"
   ln -sf $HOME/dotfiles/tmux/.tmux.conf "$DEST"
+  print-dest $DEST
+}
+
+link-gitconfig(){
+  DEST="$HOME/.gitconfig"
+  ln -sf $HOME/dotfiles/git/gitconfig "$DEST"
   print-dest $DEST
 }
 
