@@ -1,5 +1,16 @@
+" runtime macros/matchit.vim
+
 " Don't try to be vi compatible
 set nocompatible
+
+" Mappings
+" Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+map IRB :!irb<CR>
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
@@ -98,4 +109,3 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme blue
-
