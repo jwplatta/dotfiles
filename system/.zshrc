@@ -1,5 +1,4 @@
 echo "Loading ZSHRC from dotfiles"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
@@ -92,6 +91,8 @@ source $ZSH/oh-my-zsh.sh
 # fuzzy find
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
+export EDITOR='vim'
+
 # postgresql
 # Not using the Mac OS installed
 # export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin"
@@ -103,20 +104,17 @@ export PATH=/usr/local/opt/postgresql@10/bin/:$PATH
 # git
 [ -s "/Users/josephplatta/.scm_breeze/scm_breeze.sh" ] && source "/Users/josephplatta/.scm_breeze/scm_breeze.sh"
 
-# anaconda
-export PATH=$HOME/anaconda3/bin:$PATH
-
 # openssl
 export PATH=/usr/local/openssl/bin:$PATH
 export MANPATH=/usr/local/openssl/share/man:$MANPATH
 
 # python
-if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
-  echo "PATH includes ~/.pyenv/shims:"
-  echo
-else
-  eval "$(pyenv init -)"
-fi
+# if [[ ":$PATH:" == *"$HOME/.pyenv/shims:"* ]]; then
+#   echo "PATH includes ~/.pyenv/shims:"
+#   echo
+# else
+#   eval "$(pyenv init -)"
+# fi
 
 # kubernetes autocomplete
 source <(kubectl completion zsh);
@@ -131,5 +129,19 @@ export KERL_BUILD_DOCS=yes
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/josephplatta/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/Users/josephplatta/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "/Users/josephplatta/anaconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/Users/josephplatta/anaconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

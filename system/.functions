@@ -28,6 +28,8 @@ link-df(){
   link-tool-versions
   link-iex-global
   link_psqlrc
+  link-condarc
+  link-tmux-conf
   echo "dotfiles linked"
 }
 
@@ -110,8 +112,20 @@ link-iex-global(){
 }
 
 link_psqlrc(){
-  DEST=DEST="$HOME/.psqlrc"
-  ln -sf $HOME/dotfiles/postgres/.psqlrc
+  DEST="$HOME/.psqlrc"
+  ln -sf $HOME/dotfiles/postgres/.psqlrc "$DEST"
+  print-dest $DEST
+}
+
+link-condarc(){
+  DEST="$HOME/.condarc"
+  ln -sf $HOME/dotfiles/python/.condarc "$DEST"
+  print-dest $DEST
+}
+
+link-tmux-conf(){
+  DEST="$HOME/.tmux.conf"
+  ln -sf $HOME/dotfiles/tmux/.tmux.conf "$DEST"
   print-dest $DEST
 }
 
@@ -143,4 +157,14 @@ ssh-jwplatta(){
 start-jupyter(){
   cd $HOME/Documents/data_science/notebooks
   jupyter notebook
+}
+
+edit-sql(){
+  code $HOME/.universal_scratch/sql_scratch.sql
+}
+
+tmux-send-sql(){
+  SQL=`cat $HOME/.universal_scratch/sql_scratch.sql`
+  echo $SQL
+  tmux send -t $1.0 "$SQL "
 }

@@ -41,4 +41,8 @@ alias bsstart="brew services start"
 
 # Python
 alias pest="python -m unittest"
+alias caa="conda activate"
+alias cad="conda deactivate"
 
+# tmux
+alias t="tmux"
