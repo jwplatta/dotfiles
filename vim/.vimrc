@@ -1,16 +1,44 @@
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-commentary'
+Plug 'thoughtbot/vim-rspec'
+call plug#end()
+
+" leader key
+let mapleader = " " 
+
 " runtime macros/matchit.vim
 
 " Don't try to be vi compatible
-set nocompatible
 
 " Mappings
+
 " Disable arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-map IRB :!irb<CR>
+nmap <leader>irb :!irb<CR>
+nmap <leader>iex :!iex<CR>
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<CR>
+nmap <leader>hh <C-w>h
+nmap <leader>jj <C-w>j
+nmap <leader>kk <C-w>k
+nmap <leader>ll <C-w>l
+nmap <leader>s :w<CR>
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+
+" Exit insert mode
+imap jk <esc>:w<CR>
+imap kj <esc>:w<CR>
 
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
@@ -23,8 +51,11 @@ syntax on
 " For plugins to load correctly
 filetype plugin indent on
 
-" TODO: Pick a leader key
-" let mapleader = ","
+" Make CtrlP use ag for listing the files. Way faster and no useless files.
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
+set nocompatible
 
 " Security
 set modelines=0
@@ -56,10 +87,6 @@ set scrolloff=3
 set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
-
-" Move up/down editor lines
-nnoremap j gj
-nnoremap k gk
 
 " Allow hidden buffers
 set hidden
