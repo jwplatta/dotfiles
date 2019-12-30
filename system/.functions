@@ -64,6 +64,12 @@ link-vimrc(){
   print-dest $DEST
 }
 
+link-agignore(){
+  DEST="$HOME/.agignore"
+  ln -sf $HOME/dotfiles/vim/.agignore $DEST
+  print-dest $DEST
+}
+
 link-bashrc(){
   DEST="$HOME/.bashrc"
   ln -sf $HOME/dotfiles/system/.bashrc $DEST
