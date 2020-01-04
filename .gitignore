@@ -60,6 +60,7 @@ tmp/**/*
 tags.temp
 tags.lock
 config.yml
+*.swp
 
 # Elixir
 .elixir_ls
