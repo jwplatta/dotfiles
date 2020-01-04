@@ -9,7 +9,7 @@ Plug 'thoughtbot/vim-rspec'
 call plug#end()
 
 " leader key
-let mapleader = " " 
+let mapleader = " "
 
 " runtime macros/matchit.vim
 
@@ -27,6 +27,7 @@ nmap <leader>irb :!irb<CR>
 nmap <leader>iex :!iex<CR>
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<CR>
+nmap <leader>ww <C-w><C-w>
 nmap <leader>hh <C-w>h
 nmap <leader>jj <C-w>j
 nmap <leader>kk <C-w>k
