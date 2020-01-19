@@ -11,6 +11,8 @@ scrx-mk(){
   touch ./scratch/scratch.sh
   touch ./scratch/scratch.md
   touch ./scratch/scratch.py
+  touch ./scratch/scratch.c
+  cp $HOME/dotfiles/scrx/makefile ./scratch/makefile
   
   echo "Created folder:\n"
   ls | grep scratch
