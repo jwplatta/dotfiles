@@ -2,17 +2,15 @@
 
 ## Install
 
-1. `~$ git clone git@github.com:jplatta/dotfiles.git` 
+1. `~$ git clone git@github.com:jplatta/dotfiles.git`
 
-## Notes/TODO
+## TODO
 
-* Write ruby code to write new bash functions for opening added workspaces
-* Implement destroy dotfile links
-* githook for rubocop
-* elixir stuff, e.g. IEx shell
-* .irbrc
-* .gemrc
-* change default shell: `$ chsh -s $(which zsh)` 
+- Cleanup and hopefully remove `.functions`
+- Can you get rid of `notetaker`?
+-
+
+
 
 ## Reference
 
@@ -29,5 +27,5 @@
 ## Other
 
 * [Setup mac](https://sourabhbajaj.com/mac-setup/Homebrew/)
-* create custom oh-my-zsh theme in `.oh-my-zsh/themes/theme_name.zsh-theme` 
+* create custom oh-my-zsh theme in `.oh-my-zsh/themes/theme_name.zsh-theme`
 

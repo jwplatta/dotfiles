@@ -1,25 +1,10 @@
-# Source alias files
-source $HOME/dotfiles/system/aliases/git
-source $HOME/dotfiles/system/aliases/ruby
-source $HOME/dotfiles/system/aliases/rails
-source $HOME/dotfiles/system/aliases/mix_elixir
-source $HOME/dotfiles/system/aliases/kubernetes
-
-# General
-alias als="cat $HOME/dotfiles/system/.aliases"
-alias ezsh="code $HOME/dotfiles/system/.zshrc"
-alias eals="code $HOME/dotfiles/system/.aliases"
-alias efun="code $HOME/dotfiles/system/.functions"
-alias op_n="code $HOME/notes"
+alias dotfiles="code $HOME/dotfiles"
 
 # Docker
+alias dc="docker-compose"
 alias d="docker"
 alias dcontainers="docker container list"
 alias dvols="ls $HOME/docker/volumes"
-
-# Project
-alias prc="cd $HOME/procore"
-alias prc-rpt="cd $HOME/procore_repos/procore-reporting"
 
 # Linux aliases
 alias lsag="ls -a | grep"
@@ -34,15 +19,41 @@ alias cleanupds='find . -type f -name "*.DS_Store" -ls -delete'
 # Bundler
 alias be="bundle exec"
 
-# Brew aliases
-alias brewsl="brew services list"
-alias bsstop="brew services stop"
-alias bsstart="brew services start"
-
-# Python
-alias pest="python -m unittest"
-alias caa="conda activate"
-alias cad="conda deactivate"
-
 # tmux
 alias t="tmux"
+
+# Git
+alias gs="git status"
+alias ga="git add"
+alias gb="git branch"
+alias gbl="git blame"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gmm="git merge master"
+alias gash="git stash"
+alias gasha="git stash apply"
+alias gashp="git stash pop"
+alias gashd="git stash drop"
+alias gashl="git stash list"
+alias gashc="git stash clear"
+alias gpo="git pull origin"
+alias pullmast="git pull origin master"
+
+# Elixir
+alias mxps="mix phx.server"
+alias mxer="mix ecto.reset"
+alias Smxps="iex -S mix phx.server"
+alias iSmx="iex -S mix"
+alias mxdpsg="mix deps.get"
+alias ex="elixir"
+alias exc="elixirc"
+alias mxf="mix format"
+
+# Kubernetes
+alias k="kubectl"
+alias kc="kubectl config"
+alias kgp="kubectl get pod"
+alias kgd="kubectl get deployment"

@@ -1,10 +1,13 @@
 require 'rake'
 
-task default: ['warning']
+namespace :dotfiles do
+  task :copy_to_home do
+    puts "guten tag!"
+  end
 
-task install: ['oh_my_zsh_setup', 'switch_to_zsh']
+  task default: ['warning']
 
-task :warning do
-  # Warn user that it'll go through the entire install process
-  puts 'Please run "rake install" to install dotfiles.'
+  task :warning do
+    puts 'Please run "rake install" to install dotfiles.'
+  end
 end

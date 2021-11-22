@@ -1,2 +1,0 @@
-alias rubofix="rubocop -a "
-alias rubomat="rubocop -x "

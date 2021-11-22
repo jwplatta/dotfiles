@@ -1,4 +1,0 @@
-alias k="kubectl"
-alias kc="kubectl config"
-alias kgp="kubectl get pod"
-alias kgd="kubectl get deployment"

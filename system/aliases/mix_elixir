@@ -1,8 +1,0 @@
-alias mxps="mix phx.server"
-alias mxer="mix ecto.reset"
-alias Smxps="iex -S mix phx.server"
-alias iSmx="iex -S mix"
-alias mxdpsg="mix deps.get"
-alias ex="elixir"
-alias exc="elixirc"
-alias mxf="mix format"

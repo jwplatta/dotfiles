@@ -1,4 +1,0 @@
-export POSTGRES_PASSWORD=postgres
-export PGPASSWORD=postgres
-export PGUSER=postgres
-export PGHOST=localhost
