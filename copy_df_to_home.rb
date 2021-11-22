@@ -14,6 +14,8 @@ DOTFILES = [
   "#{DOTFILES_PATH}/.agignore",
   "#{DOTFILES_PATH}/.aliases",
   "#{DOTFILES_PATH}/.condarc",
+  "#{DOTFILES_PATH}/.gitconfig",
+  "#{DOTFILES_PATH}/.gitignore_global",
   "#{DOTFILES_PATH}/.iex.exs",
   "#{DOTFILES_PATH}/.tmux.conf",
   "#{DOTFILES_PATH}/.tool-versions",
