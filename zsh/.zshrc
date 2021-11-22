@@ -132,6 +132,11 @@ export KERL_BUILD_DOCS=yes
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+## Magick
+# export MAGICK_HOME="$HOME/Documents/software/ImageMagick-7.0.7"
+# export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+# export PATH="$MAGICK_HOME/bin:$PATH"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$(''$HOME'/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

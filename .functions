@@ -36,25 +36,25 @@ link-df(){
 
 link-gitignore(){
   DEST="$HOME/.gitignore_global"
-  ln -sf $HOME/dotfiles/gitignore_global $DEST
+  ln -sf $HOME/dotfiles/git/gitignore_global $DEST
   print-dest $DEST
 }
 
 link-env(){
   DEST="$HOME/.env"
-  ln -sf $HOME/dotfiles/.env_defaults $DEST
+  ln -sf $HOME/dotfiles/system/.env_defaults $DEST
   print-dest $DEST
 }
 
 link-zsh(){
   DEST="$HOME/.zshrc"
-  ln -sf $HOME/dotfiles/zsh/.zshrc $DEST
+  ln -sf $HOME/dotfiles/system/.zshrc $DEST
   print-dest $DEST
 }
 
 link-zsh-lcl(){
   DEST="$HOME/.zshrc.local"
-  ln -sf $HOME/dotfiles/zsh/.zshrc.local $DEST
+  ln -sf $HOME/dotfiles/system/.zshrc.local $DEST
   print-dest $DEST
 }
 
@@ -66,19 +66,19 @@ link-vimrc(){
 
 link-agignore(){
   DEST="$HOME/.agignore"
-  ln -sf $HOME/dotfiles/.agignore $DEST
+  ln -sf $HOME/dotfiles/vim/.agignore $DEST
   print-dest $DEST
 }
 
 link-bashrc(){
   DEST="$HOME/.bashrc"
-  ln -sf $HOME/dotfiles/bash/.bashrc $DEST
+  ln -sf $HOME/dotfiles/system/.bashrc $DEST
   print-dest $DEST
 }
 
 link-bash-profile(){
   DEST="$HOME/.bash_profile"
-  ln -sf $HOME/dotfiles/bash/.bash_profile $DEST
+  ln -sf $HOME/dotfiles/system/.bash_profile $DEST
   print-dest $DEST
 }
 
@@ -96,13 +96,13 @@ link-fun(){
 
 link-vsc-settings(){
   DEST="$HOME/Library/Application Support/Code/User/settings.json"
-  ln -sf $HOME/dotfiles/settings.json $DEST
+  ln -sf $HOME/dotfiles/vs_code/settings.json $DEST
   print-dest $DEST
 }
 
 link-vsc-keybindings(){
   DEST="$HOME/Library/Application Support/Code/User/keybindings.json"
-  ln -sf $HOME/dotfiles/keybindings.json "$DEST"
+  ln -sf $HOME/dotfiles/vs_code/keybindings.json "$DEST"
   print-dest $DEST
 }
 
@@ -114,7 +114,7 @@ link-tool-versions(){
 
 link-iex-global(){
   DEST="$HOME/.iex.exs"
-  ln -sf $HOME/dotfiles/.iex.exs "$DEST"
+  ln -sf $HOME/dotfiles/elixir/.iex.exs "$DEST"
   print-dest $DEST
 }
 
@@ -126,7 +126,7 @@ link_psqlrc(){
 
 link-condarc(){
   DEST="$HOME/.condarc"
-  ln -sf $HOME/dotfiles/.condarc "$DEST"
+  ln -sf $HOME/dotfiles/python/.condarc "$DEST"
   print-dest $DEST
 }
 
@@ -138,12 +138,17 @@ link-tmux-conf(){
 
 link-gitconfig(){
   DEST="$HOME/.gitconfig"
-  ln -sf $HOME/dotfiles/gitconfig "$DEST"
+  ln -sf $HOME/dotfiles/git/gitconfig "$DEST"
   print-dest $DEST
 }
 
 print-dest(){
   echo "Linked to: $1"
+}
+
+destroy-dotfile-links(){
+  echo "destroying dotfile links"
+  echo "not yet implemented"
 }
 
 # Import symlinks
@@ -155,4 +160,24 @@ symlink-pre-commit(){
   lang=$1
   ln -svf $HOME/dotfiles/git/hooks/$lang-pre-commit .git/hooks/pre-commit
   chmod +x .git/hooks/pre-commit
+}
+
+ssh-jwplatta(){
+  ssh-add ~/.ssh/jwplatta_github
+  echo "jwplatta_github added"
+}
+
+start-jupyter(){
+  cd $HOME/Documents/data_science/notebooks
+  jupyter notebook
+}
+
+edit-sql(){
+  code $HOME/.universal_scratch/sql_scratch.sql
+}
+
+tmux-send-sql(){
+  SQL=`cat $HOME/.universal_scratch/sql_scratch.sql`
+  echo $SQL
+  tmux send -t $1.0 "$SQL "
 }

@@ -43,9 +43,6 @@ _build/
 # Logs and databases #
 ######################
 *.log
-*.sql
-*.sqlite
-db/*.sqlite3
 
 #
 .bundle
@@ -64,3 +61,8 @@ tags.lock
 
 # Scratch files
 scratch/
+scratch.*
+
+# temp
+yelp.db
+history.sqlite

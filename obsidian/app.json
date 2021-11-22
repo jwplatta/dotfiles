@@ -1,0 +1,25 @@
+{
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "spellcheck": true,
+  "spellcheckDictionary": [
+    "acyclic",
+    "backpropagation",
+    "exponentiate",
+    "exponentials",
+    "Overfitting",
+    "overfitting",
+    "Underfitting",
+    "iteratively",
+    "Softmax",
+    "vectorized",
+    "hyperparameter",
+    "underfitting",
+    "sigmoid",
+    "Multinomial",
+    "dataset",
+    "hyperplanes",
+    "misclassification",
+    "hyperparameters"
+  ]
+}

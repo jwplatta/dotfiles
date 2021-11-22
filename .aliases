@@ -1,0 +1,49 @@
+# Source alias files
+source $HOME/dotfiles/system/aliases/git
+source $HOME/dotfiles/system/aliases/ruby
+source $HOME/dotfiles/system/aliases/rails
+source $HOME/dotfiles/system/aliases/mix_elixir
+source $HOME/dotfiles/system/aliases/kubernetes
+
+# General
+alias als="cat $HOME/dotfiles/system/.aliases"
+alias ezsh="code $HOME/dotfiles/system/.zshrc"
+alias eals="code $HOME/dotfiles/system/.aliases"
+alias efun="code $HOME/dotfiles/system/.functions"
+alias op_n="code $HOME/notes"
+
+# Docker
+alias dc="docker-compose"
+alias d="docker"
+alias dcontainers="docker container list"
+alias dvols="ls $HOME/docker/volumes"
+
+# Project
+alias prc="cd $HOME/procore"
+alias prc-rpt="cd $HOME/procore_repos/procore-reporting"
+
+# Linux aliases
+alias lsag="ls -a | grep"
+alias ls="ls -GFh"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Recursively remove .DS_Store files
+alias cleanupds='find . -type f -name "*.DS_Store" -ls -delete'
+
+# Bundler
+alias be="bundle exec"
+
+# Brew aliases
+alias brewsl="brew services list"
+alias bsstop="brew services stop"
+alias bsstart="brew services start"
+
+# Python
+alias pest="python -m unittest"
+alias caa="conda activate"
+alias cad="conda deactivate"
+
+# tmux
+alias t="tmux"

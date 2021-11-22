@@ -1,0 +1,439 @@
+{
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "off",
+  "[markdown]": {
+    "editor.quickSuggestions": false
+  },
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "extensions.ignoreRecommendations": true,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "explorer.confirmDelete": false,
+  "ruby.intellisense": "rubyLocate",
+  "terraform.format": {
+    "enable": true,
+    "ignoreExtensionsOnSave": [
+      ".tfsmurf"
+    ],
+    "formatOnSave": false
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "bashBeautify.tabSize": 2,
+  "ruby.rubocop.executePath": "",
+  "ruby.lint": {
+    "reek": true,
+    "rubocop": true,
+    "ruby": true, //Runs ruby -wc
+    "fasterer": true,
+    "debride": true,
+    "ruby-lint": true
+  },
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": true,
+  "workbench.panel.defaultLocation": "right",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "dash.languageIdToDocsetMap": {
+    "ansible": [
+      "ansible"
+    ],
+    "ansible-advanced": [
+      "ansible"
+    ],
+    "css": [
+      "css",
+      "bootstrap",
+      "foundation",
+      "less",
+      "awesome",
+      "cordova",
+      "phonegap"
+    ],
+    "clojure": [
+      "clojure"
+    ],
+    "coffee": [
+      "coffee"
+    ],
+    "cpp": [
+      "cpp",
+      "net",
+      "boost",
+      "qt",
+      "cvcpp",
+      "cocos2dx",
+      "c",
+      "manpages"
+    ],
+    "csharp": [
+      "net",
+      "mono",
+      "unity3d"
+    ],
+    "dart": [
+      "dartlang",
+      "polymerdart",
+      "angulardart"
+    ],
+    "elixir": [
+      "elixir"
+    ],
+    "elm": [
+      "elm"
+    ],
+    "erlang": [
+      "erlang"
+    ],
+    "go": [
+      "go",
+      "godoc"
+    ],
+    "haskell": [
+      "haskell"
+    ],
+    "haml": [
+      "haml"
+    ],
+    "html": [
+      "html",
+      "svg",
+      "css",
+      "bootstrap",
+      "foundation",
+      "awesome",
+      "statamic",
+      "javascript",
+      "jquery",
+      "jqueryui",
+      "jquerym",
+      "angularjs",
+      "backbone",
+      "marionette",
+      "meteor",
+      "moo",
+      "prototype",
+      "ember",
+      "lodash",
+      "underscore",
+      "sencha",
+      "extjs",
+      "knockout",
+      "zepto",
+      "cordova",
+      "phonegap",
+      "yui"
+    ],
+    "jade": [
+      "jade"
+    ],
+    "java": [
+      "java",
+      "javafx",
+      "grails",
+      "groovy",
+      "playjava",
+      "spring",
+      "cvj",
+      "processing"
+    ],
+    "javascript": [
+      "javascript",
+      "jquery",
+      "jqueryui",
+      "jquerym",
+      "react",
+      "angularjs",
+      "backbone",
+      "marionette",
+      "meteor",
+      "sproutcore",
+      "moo",
+      "prototype",
+      "bootstrap",
+      "foundation",
+      "lodash",
+      "underscore",
+      "ember",
+      "sencha",
+      "extjs",
+      "titanium",
+      "knockout",
+      "zepto",
+      "yui",
+      "d3",
+      "svg",
+      "dojo",
+      "coffee",
+      "nodejs",
+      "express",
+      "grunt",
+      "mongoose",
+      "moment",
+      "require",
+      "awsjs",
+      "jasmine",
+      "sails",
+      "sinon",
+      "chai",
+      "html",
+      "css",
+      "cordova",
+      "phonegap",
+      "unity3d"
+    ],
+    "javascriptreact": [
+      "react"
+    ],
+    "julia": [
+      "julia"
+    ],
+    "less": [
+      "less"
+    ],
+    "lua": [
+      "lua",
+      "corona"
+    ],
+    "markdown": [
+      "markdown"
+    ],
+    "objective-c": [
+      "iphoneos",
+      "macosx",
+      "watchos",
+      "tvos",
+      "appledoc",
+      "cocos2d",
+      "cocos3d",
+      "kobold2d",
+      "sparrow",
+      "c",
+      "manpages"
+    ],
+    "perl": [
+      "perl",
+      "manpages"
+    ],
+    "php": [
+      "php",
+      "wordpress",
+      "drupal",
+      "zend",
+      "laravel",
+      "yii",
+      "joomla",
+      "ee",
+      "codeigniter",
+      "cakephp",
+      "phpunit",
+      "symfony",
+      "typo3",
+      "twig",
+      "smarty",
+      "craft",
+      "phpp",
+      "html",
+      "statamic",
+      "mysql",
+      "sqlite",
+      "mongodb",
+      "psql",
+      "redis"
+    ],
+    "pde": [
+      "processing"
+    ],
+    "puppet": [
+      "puppet"
+    ],
+    "python": [
+      "python",
+      "django",
+      "twisted",
+      "sphinx",
+      "flask",
+      "tornado",
+      "sqlalchemy",
+      "numpy",
+      "scipy",
+      "salt",
+      "pandas",
+      "matplotlib",
+      "cvp"
+    ],
+    "r": [
+      "r"
+    ],
+    "ruby": [
+      "ruby",
+      "rubygems",
+      "rails"
+    ],
+    "rust": [
+      "rust"
+    ],
+    "sass": [
+      "sass",
+      "compass",
+      "bourbon",
+      "neat",
+      "susy",
+      "css"
+    ],
+    "scala": [
+      "scala",
+      "akka",
+      "playscala"
+    ],
+    "shellscript": [
+      "bash",
+      "manpages"
+    ],
+    "sql": [
+      "mysql",
+      "sqlite",
+      "psql"
+    ],
+    "stylus": [
+      "stylus"
+    ],
+    "swift": [
+      "swift",
+      "iphoneos",
+      "macosx",
+      "watchos",
+      "tvos",
+      "appledoc"
+    ],
+    "tcl": [
+      "tcl"
+    ],
+    "typescript": [
+      "typescript",
+      "javascript"
+    ],
+    "yaml": [
+      "chef",
+      "ansible"
+    ],
+    "haxe": [
+      "haxe"
+    ],
+    "terraform": [
+      "terraform"
+    ]
+  },
+  "breadcrumbs.enabled": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "python.jediEnabled": false,
+  "C_Cpp.updateChannel": "Insiders",
+  "editor.formatOnSave": false,
+  "python.formatting.provider": "autopep8",
+  "python.linting.pylintEnabled": true,
+  "terminal.integrated.inheritEnv": false,
+  "files.maxMemoryForLargeFilesMB": 9000,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "files.associations": {
+    "gfserver.h": "c",
+    "__bit_reference": "cpp",
+    "__config": "cpp",
+    "__debug": "cpp",
+    "__functional_base": "cpp",
+    "__hash_table": "cpp",
+    "__locale": "cpp",
+    "__mutex_base": "cpp",
+    "__nullptr": "cpp",
+    "__split_buffer": "cpp",
+    "__string": "cpp",
+    "__threading_support": "cpp",
+    "__tree": "cpp",
+    "__tuple": "cpp",
+    "algorithm": "cpp",
+    "array": "cpp",
+    "atomic": "cpp",
+    "bitset": "cpp",
+    "cctype": "cpp",
+    "chrono": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp",
+    "csignal": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "exception": "cpp",
+    "string_view": "cpp",
+    "fstream": "cpp",
+    "functional": "cpp",
+    "initializer_list": "cpp",
+    "iomanip": "cpp",
+    "ios": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "istream": "cpp",
+    "iterator": "cpp",
+    "limits": "cpp",
+    "list": "cpp",
+    "locale": "cpp",
+    "map": "cpp",
+    "memory": "cpp",
+    "mutex": "cpp",
+    "new": "cpp",
+    "numeric": "cpp",
+    "ostream": "cpp",
+    "queue": "cpp",
+    "random": "cpp",
+    "ratio": "cpp",
+    "regex": "cpp",
+    "set": "cpp",
+    "sstream": "cpp",
+    "stack": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "string": "cpp",
+    "system_error": "cpp",
+    "thread": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "typeinfo": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "utility": "cpp",
+    "vector": "cpp",
+    "*.tcc": "cpp",
+    "hash_map": "cpp",
+    "cinttypes": "cpp",
+    "hashtable": "cpp"
+  },
+"window.zoomLevel": 1,
+"python.languageServer": "Default",
+"diffEditor.ignoreTrimWhitespace": false,
+"security.workspace.trust.untrustedFiles": "open",
+"[typescriptreact]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+}
