@@ -1,10 +1,7 @@
 alias dotfiles="code $HOME/dotfiles"
 
-# Docker
-alias dc="docker-compose"
-alias d="docker"
-alias dcontainers="docker container list"
-alias dvols="ls $HOME/docker/volumes"
+# Brew
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
 
 # Linux aliases
 alias lsag="ls -a | grep"
