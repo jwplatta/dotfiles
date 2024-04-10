@@ -4,7 +4,11 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "off",
   "[markdown]": {
-    "editor.quickSuggestions": false
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
   },
   "[ruby]": {
     "editor.tabSize": 2,
@@ -42,7 +46,7 @@
   },
   "workbench.colorTheme": "Solarized Dark",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "workbench.panel.defaultLocation": "right",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -343,7 +347,7 @@
   "python.jediEnabled": false,
   "C_Cpp.updateChannel": "Insiders",
   "editor.formatOnSave": false,
-  "python.formatting.provider": "autopep8",
+  "python.formatting.provider": "none",
   "python.linting.pylintEnabled": true,
   "terminal.integrated.inheritEnv": false,
   "files.maxMemoryForLargeFilesMB": 9000,
@@ -429,11 +433,34 @@
     "cinttypes": "cpp",
     "hashtable": "cpp"
   },
-"window.zoomLevel": 1,
 "python.languageServer": "Default",
 "diffEditor.ignoreTrimWhitespace": false,
 "security.workspace.trust.untrustedFiles": "open",
 "[typescriptreact]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
+  "editor.defaultFormatter": "vscode.typescript-language-features"
+},
+"[html]": {
+  "editor.defaultFormatter": "vscode.html-language-features"
+},
+"git.suggestSmartCommit": false,
+"editor.unicodeHighlight.allowedCharacters": {
+  "​": true
+},
+"sqltools.highlightQuery": false,
+"workbench.startupEditor": "none",
+"extensions.autoUpdate": "onlyEnabledExtensions",
+"editor.accessibilitySupport": "off",
+"editor.inlineSuggest.enabled": true,
+"github.copilot.enable": {
+  "*": true,
+  "plaintext": true,
+  "markdown": true,
+  "scminput": false
+},
+"[python]": {
+  "editor.defaultFormatter": "ms-python.autopep8"
+},
+"git.openRepositoryInParentFolders": "always",
+"redhat.telemetry.enabled": false,
+"window.zoomLevel": 1
 }
