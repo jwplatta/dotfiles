@@ -148,6 +148,7 @@ export EDITOR='vim'
 export PATH=$PATH:/usr/bin/openssl
 export SBT_HOME=/Users/jplatta/.asdf/shims/sbt
 export PATH=$PATH:$SBT_HOME/bin
+export PATH=$PATH:$HOME/.cargo/bin
 
 export ASDF_HOME=$HOME/.asdf
 source $ASDF_HOME/asdf.sh
